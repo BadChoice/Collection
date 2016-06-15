@@ -4,6 +4,13 @@ This library is inspired by `Laravel` collection class to use its expressive syn
 Check the .h file to see the documentation as well as all available methods
 
 
+## Installation
+Copy the category files to your project or just
+
+```
+    pod 'Collection'            ,:git => 'https://github.com/BadChoice/collection.git'
+```
+
 ## Examples
 
 ```
