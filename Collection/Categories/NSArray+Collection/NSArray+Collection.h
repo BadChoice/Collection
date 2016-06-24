@@ -191,6 +191,27 @@
  */
 - (NSDictionary*)expand:(NSString *)keypath unique:(BOOL)unique;
 
+/**
+ * Returns the greatests element in the array
+ */
+-(id)maxObject;
+
+/**
+ * Returns the greatests element.keypath in the array
+ */
+-(id)maxObject:(NSString*)keypath;
+
+/**
+ * Returns the greatests element in the array
+ */
+-(id)minObject;
+
+/**
+ * Returns the greatests element.keypath in the array
+ */
+-(id)minObject:(NSString*)keypath;
+
+
 #pragma mark - Operators
 - (NSArray*)intersect:(NSArray*)b;
 - (NSArray*)union:(NSArray*)b;

@@ -249,6 +249,30 @@
     return result;
 }
 
+-(id)maxObject{
+    return [self reduce:^id(id carry, id object) {
+        return (object > carry ) ? object : carry;
+    } carry:self.firstObject];
+}
+
+-(id)maxObject:(NSString *)keypath{
+    return [self reduce:^id(id carry, id object) {
+        return ([object valueForKeyPath:keypath] > [carry valueForKeyPath:keypath] ) ? object : carry;
+    } carry:self.firstObject];
+}
+
+-(id)minObject{
+    return [self reduce:^id(id carry, id object) {
+        return (object < carry ) ? object : carry;
+    } carry:self.firstObject];
+}
+
+-(id)minObject:(NSString *)keypath{
+    return [self reduce:^id(id carry, id object) {
+        return ([object valueForKeyPath:keypath] < [carry valueForKeyPath:keypath] ) ? object : carry;
+    } carry:self.firstObject];
+}
+
 //==============================================
 #pragma mark - Operators
 //==============================================
