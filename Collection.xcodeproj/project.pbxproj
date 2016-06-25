@@ -17,6 +17,8 @@
 		76255B391D11B81900E6ADEB /* NSArray+Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = 76255B381D11B81900E6ADEB /* NSArray+Collection.m */; };
 		76255B3C1D11B87400E6ADEB /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 76255B3A1D11B87400E6ADEB /* readme.md */; };
 		76255B3D1D11B87400E6ADEB /* Collection.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = 76255B3B1D11B87400E6ADEB /* Collection.podspec.json */; };
+		768DD8981D1D742C00B7E33B /* RVArrayCollectionMinMaxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 768DD8971D1D742C00B7E33B /* RVArrayCollectionMinMaxTests.m */; };
+		768DD89A1D1D756700B7E33B /* RVArrayCollectionSetsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 768DD8991D1D756700B7E33B /* RVArrayCollectionSetsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		76255B381D11B81900E6ADEB /* NSArray+Collection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Collection.m"; sourceTree = "<group>"; };
 		76255B3A1D11B87400E6ADEB /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		76255B3B1D11B87400E6ADEB /* Collection.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Collection.podspec.json; sourceTree = "<group>"; };
+		768DD8971D1D742C00B7E33B /* RVArrayCollectionMinMaxTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVArrayCollectionMinMaxTests.m; sourceTree = "<group>"; };
+		768DD8991D1D756700B7E33B /* RVArrayCollectionSetsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVArrayCollectionSetsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				76255B2A1D11B7D900E6ADEB /* RVArrayCollectionTests.m */,
+				768DD8971D1D742C00B7E33B /* RVArrayCollectionMinMaxTests.m */,
+				768DD8991D1D756700B7E33B /* RVArrayCollectionSetsTests.m */,
 				76255B2C1D11B7D900E6ADEB /* Info.plist */,
 			);
 			path = CollectionTests;
@@ -252,6 +258,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				76255B2B1D11B7D900E6ADEB /* RVArrayCollectionTests.m in Sources */,
+				768DD89A1D1D756700B7E33B /* RVArrayCollectionSetsTests.m in Sources */,
+				768DD8981D1D742C00B7E33B /* RVArrayCollectionMinMaxTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +442,7 @@
 				76255B311D11B7D900E6ADEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		76255B321D11B7D900E6ADEB /* Build configuration list for PBXNativeTarget "CollectionTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +451,7 @@
 				76255B341D11B7D900E6ADEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
