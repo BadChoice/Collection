@@ -1,6 +1,6 @@
 {
     "name": "Collection",
-    "version": "0.1",
+    "version": "1.0",
     "summary": "Laravel collection like inspired NSArray category",
     "platforms": {
         "ios": "6.0"
