@@ -1,6 +1,6 @@
 {
     "name": "Collection",
-    "version": "1.0",
+    "version": "1.0.1",
     "summary": "Laravel collection like inspired NSArray category",
     "license": "MIT",
     "platforms": {
