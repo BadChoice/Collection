@@ -8,7 +8,7 @@ Check the .h file to see the documentation as well as all available methods
 Copy the category files to your project or just
 
 ```
-    pod 'Collection'            ,:git => 'https://github.com/BadChoice/collection.git'
+    pod 'Collection' 
 ```
 
 ## Examples
