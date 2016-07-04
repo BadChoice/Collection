@@ -2,6 +2,7 @@
     "name": "Collection",
     "version": "1.0",
     "summary": "Laravel collection like inspired NSArray category",
+    "license": "MIT",
     "platforms": {
         "ios": "6.0"
     },
