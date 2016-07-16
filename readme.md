@@ -1,7 +1,9 @@
 # NSArray+Collection
 
+**Never write another loop again**   
+
 This library is inspired by `Laravel` collection class to use its expressive syntax.
-Check the .h file to see the documentation as well as all available methods
+Check the .h file to see the documentation as well as all available methods.
 
 
 ## Installation
@@ -50,6 +52,10 @@ Copy the category files to your project or just
     NSNumber* totalAge = [self.heroes reduce:^id(NSNumber* carry, Hero* object) {
         return @(object.age.intValue + carry.intValue);
     } carry:@(0)];
+
+    or
+
+    NSNumber* totalAge2 = [self.heroes sum:@"age"];
 ```
 
 ```
