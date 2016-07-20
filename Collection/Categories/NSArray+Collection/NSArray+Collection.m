@@ -35,6 +35,14 @@
     return (object) ? object : defaultObject;
 }
 
+- (id)last:(BOOL (^)(id))condition{
+    return [self.reverse first:condition];
+}
+
+- (id)last:(BOOL (^)(id object))condition default:(id)defaultObject{
+    id object = [self last:condition];
+    return (object) ? object : defaultObject;
+}
 
 -(BOOL)contains:(BOOL (^)(id object))checker{
     bool __block found = false;
@@ -271,6 +279,18 @@
     return [self reduce:^id(id carry, id object) {
         return ([object valueForKeyPath:keypath] < [carry valueForKeyPath:keypath] ) ? object : carry;
     } carry:self.firstObject];
+}
+
+-(NSArray*)zip:(NSArray*)other{
+    NSInteger size = MIN(self.count, other.count);
+    
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:size];
+    for (NSUInteger idx = 0; idx < size; idx++)
+    {
+        [result addObject:[NSArray arrayWithObjects:[self objectAtIndex:idx], [other objectAtIndex:idx], nil]];
+    }
+    
+    return result;
 }
 
 //==============================================

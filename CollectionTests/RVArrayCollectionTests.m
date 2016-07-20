@@ -115,5 +115,33 @@
     XCTAssertTrue([result isEqual: expectation]);
 }
 
+-(void)testZipEqualSize{
+    NSArray* n1         = @[@"a",@"b",@"c"];
+    NSArray* n2         = @[@"1",@"2",@"3"];
+    NSArray* result     = [n1 zip:n2];
+    
+    NSArray* expectation = @[
+                             @[@"a",@"1"],
+                             @[@"b",@"2"],
+                             @[@"c",@"3"],
+                             ];
+    
+    XCTAssertTrue([result isEqualToArray:expectation]);
+}
+
+-(void)testZipDifferentSize{
+    NSArray* n1         = @[@"a",@"b",@"c",@"d"];
+    NSArray* n2         = @[@"1",@"2",@"3"];
+    NSArray* result     = [n1 zip:n2];
+    
+    NSArray* expectation = @[
+                             @[@"a",@"1"],
+                             @[@"b",@"2"],
+                             @[@"c",@"3"],
+                             ];
+    
+    XCTAssertTrue([result isEqualToArray:expectation]);
+}
+
 
 @end

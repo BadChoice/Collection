@@ -31,6 +31,16 @@
 - (id)first:(BOOL (^)(id object))condition default:(id)defaultObject;
 
 /**
+ * @return id last object that passes the truth test or `nil` if any
+ */
+- (id)last:(BOOL (^)(id))condition;
+
+/**
+ * @return id last object that passes the truth test or `defaultObject` if any passes
+ */
+- (id)last:(BOOL (^)(id object))condition default:(id)defaultObject;
+
+/**
  * @return BOOL if any object passes the truth test
  */
 - (BOOL)contains:(BOOL (^)(id object))checker;
@@ -210,6 +220,12 @@
  * Returns the greatests element.keypath in the array
  */
 -(id)minObject:(NSString*)keypath;
+
+
+/**
+ *zip lets you take one collection, and pair every element in that collection with the
+ *corresponding element in another collection.*/
+-(NSArray*)zip:(NSArray*)other;
 
 
 #pragma mark - Operators
