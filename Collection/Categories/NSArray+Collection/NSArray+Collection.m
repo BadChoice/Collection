@@ -293,6 +293,15 @@
     return result;
 }
 
+-(NSDictionary*)mapToAssoc:(NSArray*(^)(id obj, NSUInteger idx))block{
+    NSArray* pairs = [self map:block];
+    
+    return [pairs reduce:^id(NSMutableDictionary* dict, NSArray* mapped) {
+        dict[mapped[0]] = mapped[1];
+        return dict;
+    } carry:[[NSMutableDictionary alloc] init]];
+}
+
 //==============================================
 #pragma mark - Operators
 //==============================================

@@ -227,6 +227,10 @@
  *corresponding element in another collection.*/
 -(NSArray*)zip:(NSArray*)other;
 
+/**
+ * Associates 
+ */
+-(NSDictionary*)mapToAssoc:(NSArray*(^)(id obj, NSUInteger idx))block;
 
 #pragma mark - Operators
 - (NSArray*)intersect:(NSArray*)b;
