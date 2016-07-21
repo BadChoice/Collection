@@ -154,7 +154,7 @@
 /**
  * @return NSArray removes one level with key so [{"hola" => [1,2]},{"hola"=>[3,4]}] becomes [1,2,3,4]
  */
-- (NSArray*)flatten:(NSString*)key;
+- (NSArray*)flatten:(NSString*)keypath;
 
 /**
  * @return reduces the array to a single value, passing the result of each iteration into the subsequent iteration

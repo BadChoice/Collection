@@ -190,10 +190,10 @@
     return results;
 }
 
-- (NSArray*)flatten:(NSString*)key{
+- (NSArray*)flatten:(NSString*)keypath{
     NSMutableArray* results = [[NSMutableArray alloc] init];
     [self each:^(id object) {
-        [results addObjectsFromArray:[object valueForKey:key]];
+        [results addObjectsFromArray:[object valueForKeyPath:keypath]];
     }];
     return results;
 }
