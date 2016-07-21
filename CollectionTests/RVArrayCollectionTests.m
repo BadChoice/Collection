@@ -194,5 +194,37 @@
     XCTAssertFalse(doesContain);
 }
 
+-(void)test_pluck_with_key{
+    
+    NSArray* employees = @[
+                           @{
+                               @"name"          : @"John",
+                               @"department"    : @"Sales",
+                               @"email"         : @"john@example.com"
+                               },
+                           @{
+                               @"name"          : @"Jane",
+                               @"department"    : @"Marketing",
+                               @"email"         : @"jane@example.com"
+                               }
+                           ,
+                           @{
+                               @"name"          : @"Dave",
+                               @"department"    : @"Sales",
+                               @"email"         : @"dave@example.com"
+                               }
+                           ];
+    
+    NSDictionary* result = [employees pluck:@"email" key:@"name"];
+    NSDictionary* expectation = @{
+                                  @"John" : @"john@example.com",
+                                  @"Jane" : @"jane@example.com",
+                                  @"Dave" : @"dave@example.com",
+                                  };
+    
+    XCTAssertTrue([result isEqualToDictionary:expectation]);
+    
+}
+
 
 @end

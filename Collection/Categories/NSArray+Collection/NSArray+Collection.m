@@ -199,9 +199,17 @@
 }
 
 - (NSArray*)pluck:(NSString*)keyPath{
-    NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
     [self each:^(id object) {
         [result addObject:[object valueForKeyPath:keyPath]];
+    }];
+    return result;
+}
+
+- (NSDictionary*)pluck:(NSString*)keyPath key:(NSString*)keyKeypath{
+    NSMutableDictionary* result = [NSMutableDictionary dictionaryWithCapacity:self.count];
+    [self each:^(id object) {
+        result[[object valueForKey:keyKeypath]] = [object valueForKey:keyPath];
     }];
     return result;
 }

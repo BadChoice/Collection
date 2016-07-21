@@ -142,6 +142,11 @@
 - (NSArray*)pluck:(NSString*)keyPath;
 
 /**
+ * @return NSDictionary of all element.keyPath with the key
+ */
+- (NSDictionary*)pluck:(NSString*)keyPath key:(NSString*)keyKeypath;
+
+/**
  * @return NSArray removes one level of arrays so [[1,2,3],[4,5,6]] becomes [1,2,3,4,5,6]
  */
 - (NSArray*)flatten;
