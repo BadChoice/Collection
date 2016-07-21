@@ -177,5 +177,22 @@
     
 }
 
+-(void)test_contains_condition_true{
+    BOOL doesContain = [@[@"hello",@"goodbye",@"nevermind"] contains:^BOOL(NSString* string) {
+        return string.length > 8;
+    }];
+    
+    XCTAssertTrue(doesContain);
+}
+
+-(void)test_contains_condition_false{
+    
+    BOOL doesContain = [@[@"hello",@"goodbye",@"nevermind"] contains:^BOOL(NSString* string) {
+        return string.length > 28;
+    }];
+    
+    XCTAssertFalse(doesContain);
+}
+
 
 @end
