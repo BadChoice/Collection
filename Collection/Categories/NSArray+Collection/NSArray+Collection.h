@@ -237,6 +237,12 @@
  */
 -(NSDictionary*)mapToAssoc:(NSArray*(^)(id obj, NSUInteger idx))block;
 
+
+/** 
+ * Returns an string concatedated with delimiter
+ */
+-(NSString*)implode:(NSString*)delimiter;
+
 #pragma mark - Operators
 - (NSArray*)intersect:(NSArray*)b;
 - (NSArray*)union:(NSArray*)b;

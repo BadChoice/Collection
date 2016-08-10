@@ -310,6 +310,10 @@
     } carry:[[NSMutableDictionary alloc] init]];
 }
 
+-(NSString*)implode:(NSString*)delimiter{
+    return [self componentsJoinedByString:delimiter];
+}
+
 //==============================================
 #pragma mark - Operators
 //==============================================

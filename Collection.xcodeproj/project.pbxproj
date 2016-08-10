@@ -17,6 +17,10 @@
 		76255B391D11B81900E6ADEB /* NSArray+Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = 76255B381D11B81900E6ADEB /* NSArray+Collection.m */; };
 		76255B3C1D11B87400E6ADEB /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 76255B3A1D11B87400E6ADEB /* readme.md */; };
 		76255B3D1D11B87400E6ADEB /* Collection.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = 76255B3B1D11B87400E6ADEB /* Collection.podspec.json */; };
+		76274F931D5B40E000C4014A /* NSDictionary+Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = 76274F921D5B40E000C4014A /* NSDictionary+Collection.m */; };
+		76274F961D5B40FE00C4014A /* NSString+Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = 76274F951D5B40FE00C4014A /* NSString+Collection.m */; };
+		76274F981D5B41CC00C4014A /* RVStringCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76274F971D5B41CC00C4014A /* RVStringCollectionTests.m */; };
+		76274F9A1D5B41F000C4014A /* RVDictionaryCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76274F991D5B41F000C4014A /* RVDictionaryCollectionTests.m */; };
 		768DD8981D1D742C00B7E33B /* RVArrayCollectionMinMaxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 768DD8971D1D742C00B7E33B /* RVArrayCollectionMinMaxTests.m */; };
 		768DD89A1D1D756700B7E33B /* RVArrayCollectionSetsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 768DD8991D1D756700B7E33B /* RVArrayCollectionSetsTests.m */; };
 /* End PBXBuildFile section */
@@ -49,6 +53,12 @@
 		76255B381D11B81900E6ADEB /* NSArray+Collection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Collection.m"; sourceTree = "<group>"; };
 		76255B3A1D11B87400E6ADEB /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		76255B3B1D11B87400E6ADEB /* Collection.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Collection.podspec.json; sourceTree = "<group>"; };
+		76274F911D5B40E000C4014A /* NSDictionary+Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Collection.h"; path = "NSDictionary+Collection/NSDictionary+Collection.h"; sourceTree = "<group>"; };
+		76274F921D5B40E000C4014A /* NSDictionary+Collection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Collection.m"; path = "NSDictionary+Collection/NSDictionary+Collection.m"; sourceTree = "<group>"; };
+		76274F941D5B40FE00C4014A /* NSString+Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Collection.h"; path = "NSString+Collection/NSString+Collection.h"; sourceTree = "<group>"; };
+		76274F951D5B40FE00C4014A /* NSString+Collection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Collection.m"; path = "NSString+Collection/NSString+Collection.m"; sourceTree = "<group>"; };
+		76274F971D5B41CC00C4014A /* RVStringCollectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVStringCollectionTests.m; sourceTree = "<group>"; };
+		76274F991D5B41F000C4014A /* RVDictionaryCollectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVDictionaryCollectionTests.m; sourceTree = "<group>"; };
 		768DD8971D1D742C00B7E33B /* RVArrayCollectionMinMaxTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVArrayCollectionMinMaxTests.m; sourceTree = "<group>"; };
 		768DD8991D1D756700B7E33B /* RVArrayCollectionSetsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVArrayCollectionSetsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +132,8 @@
 				76255B2A1D11B7D900E6ADEB /* RVArrayCollectionTests.m */,
 				768DD8971D1D742C00B7E33B /* RVArrayCollectionMinMaxTests.m */,
 				768DD8991D1D756700B7E33B /* RVArrayCollectionSetsTests.m */,
+				76274F971D5B41CC00C4014A /* RVStringCollectionTests.m */,
+				76274F991D5B41F000C4014A /* RVDictionaryCollectionTests.m */,
 				76255B2C1D11B7D900E6ADEB /* Info.plist */,
 			);
 			path = CollectionTests;
@@ -130,6 +142,8 @@
 		76255B351D11B81900E6ADEB /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				76274F8D1D5B409100C4014A /* NSString+Collection */,
+				76274F8C1D5B408800C4014A /* NSDictionary+Collection */,
 				76255B361D11B81900E6ADEB /* NSArray+Collection */,
 			);
 			path = Categories;
@@ -142,6 +156,24 @@
 				76255B381D11B81900E6ADEB /* NSArray+Collection.m */,
 			);
 			path = "NSArray+Collection";
+			sourceTree = "<group>";
+		};
+		76274F8C1D5B408800C4014A /* NSDictionary+Collection */ = {
+			isa = PBXGroup;
+			children = (
+				76274F911D5B40E000C4014A /* NSDictionary+Collection.h */,
+				76274F921D5B40E000C4014A /* NSDictionary+Collection.m */,
+			);
+			name = "NSDictionary+Collection";
+			sourceTree = "<group>";
+		};
+		76274F8D1D5B409100C4014A /* NSString+Collection */ = {
+			isa = PBXGroup;
+			children = (
+				76274F941D5B40FE00C4014A /* NSString+Collection.h */,
+				76274F951D5B40FE00C4014A /* NSString+Collection.m */,
+			);
+			name = "NSString+Collection";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,10 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76274F961D5B40FE00C4014A /* NSString+Collection.m in Sources */,
 				76255B181D11B7D900E6ADEB /* ViewController.m in Sources */,
 				76255B151D11B7D900E6ADEB /* AppDelegate.m in Sources */,
 				76255B391D11B81900E6ADEB /* NSArray+Collection.m in Sources */,
 				76255B3C1D11B87400E6ADEB /* readme.md in Sources */,
+				76274F931D5B40E000C4014A /* NSDictionary+Collection.m in Sources */,
 				76255B121D11B7D900E6ADEB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76274F9A1D5B41F000C4014A /* RVDictionaryCollectionTests.m in Sources */,
 				76255B2B1D11B7D900E6ADEB /* RVArrayCollectionTests.m in Sources */,
 				768DD89A1D1D756700B7E33B /* RVArrayCollectionSetsTests.m in Sources */,
+				76274F981D5B41CC00C4014A /* RVStringCollectionTests.m in Sources */,
 				768DD8981D1D742C00B7E33B /* RVArrayCollectionMinMaxTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

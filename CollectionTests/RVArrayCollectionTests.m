@@ -226,5 +226,10 @@
     
 }
 
+-(void)testImplode{
+    NSString* string = [@[@"hello",@"how are",@"you"] implode:@" "];
+    XCTAssertTrue([string isEqualToString:@"hello how are you"]);
+}
+
 
 @end
