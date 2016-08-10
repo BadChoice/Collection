@@ -13,4 +13,21 @@
 - (NSArray*)  explode:(NSString*)delimiter;
 - (NSString*) initials;
 - (NSNumber*) toNumber;
+- (NSString*) append:(NSString*)append;
+- (NSString*) prepend:(NSString*)prepend;
+
+- (NSString*)replace:(NSString*)character with:(NSString*)replace;
+
+/**
+ Trims spaces on both ends
+ */
+- (NSString*) trim;
+
+/**
+ Trims spaces and new line characters on both ends
+ */
+- (NSString*) trimWithNewLine;
+
+- (NSString*) trimLeft;
+- (NSString*) trimRight;
 @end

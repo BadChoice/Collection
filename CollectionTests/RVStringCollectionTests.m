@@ -44,6 +44,26 @@
     XCTAssertTrue([initials isEqualToString:@"JP"]);
 }
 
+-(void)testTrim{
+    NSString* result = [@"   trim   " trim];
+    XCTAssertTrue( [result isEqualToString:@"trim"]);
+}
+
+-(void)testTrimRight{
+    NSString* result = [@"   trim   " trimRight];
+    XCTAssertTrue( [result isEqualToString:@"   trim"]);
+}
+
+-(void)testTrimLeft{
+    NSString* result = [@"   trim   " trimLeft];
+    XCTAssertTrue( [result isEqualToString:@"trim   "]);
+}
+
+-(void)testReplace{
+    NSString* result = [@"abcdef" replace:@"f" with:@"a"];
+    XCTAssertTrue( [result isEqualToString:@"abcdea"]);
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{

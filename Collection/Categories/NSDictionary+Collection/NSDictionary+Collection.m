@@ -22,7 +22,6 @@
     NSSet *keys = [self keysOfEntriesPassingTest:^BOOL(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         return condition(key,obj);
     }];
-    
     return [self dictionaryWithValuesForKeys:keys.allObjects];
 }
 
@@ -31,7 +30,14 @@
     NSSet *keys = [self keysOfEntriesPassingTest:^BOOL(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         return ! condition(key,obj);
     }];
-    
     return [self dictionaryWithValuesForKeys:keys.allObjects];
+}
+
+- (NSDictionary*)map:(id (^)(id key, id object))callback{
+    NSMutableDictionary* newDictionary = [[NSMutableDictionary alloc] init];
+    [self each:^(id key, id object) {
+        newDictionary[key] = callback(key,object);
+    }];
+    return newDictionary;
 }
 @end

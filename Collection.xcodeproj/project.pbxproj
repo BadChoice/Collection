@@ -61,6 +61,7 @@
 		76274F991D5B41F000C4014A /* RVDictionaryCollectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVDictionaryCollectionTests.m; sourceTree = "<group>"; };
 		768DD8971D1D742C00B7E33B /* RVArrayCollectionMinMaxTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVArrayCollectionMinMaxTests.m; sourceTree = "<group>"; };
 		768DD8991D1D756700B7E33B /* RVArrayCollectionSetsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVArrayCollectionSetsTests.m; sourceTree = "<group>"; };
+		769DBBF61D5B5EFC00357D97 /* RVCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RVCollection.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +143,7 @@
 		76255B351D11B81900E6ADEB /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				769DBBF61D5B5EFC00357D97 /* RVCollection.h */,
 				76274F8D1D5B409100C4014A /* NSString+Collection */,
 				76274F8C1D5B408800C4014A /* NSDictionary+Collection */,
 				76255B361D11B81900E6ADEB /* NSArray+Collection */,
