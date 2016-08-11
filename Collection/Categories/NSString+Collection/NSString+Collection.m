@@ -9,6 +9,8 @@
 #import "NSString+Collection.h"
 #import "NSArray+Collection.h"
 
+#define str(A,...)          [NSString stringWithFormat:A,##__VA_ARGS__]
+
 @implementation NSString (Collection)
 
 -(NSArray*)explode:(NSString*)delimiter{
@@ -79,6 +81,66 @@
     }
     
     return [self substringWithRange:NSMakeRange(location, length - location)];
+}
+
+- (NSString *)camelCase{
+    return self.pascalCase.lcFirst;
+}
+
+- (NSString *)pascalCase{
+    NSString* withoutWhiteSpaces =  [[self explode:@" "] reduce:^id(NSString* carry, NSString* word) {
+        return str(@"%@%@",carry,word.ucFirst);
+    } carry:@""];
+    
+    return [[withoutWhiteSpaces explode:@"_"] reduce:^id(NSString* carry, NSString* word) {
+        return str(@"%@%@",carry,word.ucFirst);
+    } carry:@""];
+}
+
+-(NSString *)snakeCase{
+    NSUInteger index = 1;
+    NSMutableString *snakeCaseString = [NSMutableString stringWithString:self];
+    NSUInteger length = snakeCaseString.length;
+    NSMutableCharacterSet *characterSet = [NSCharacterSet uppercaseLetterCharacterSet].mutableCopy;
+    [characterSet formUnionWithCharacterSet:[NSCharacterSet whitespaceCharacterSet]];
+    while (index < length) {
+        if ([characterSet characterIsMember:[snakeCaseString characterAtIndex:index]]) {
+            [snakeCaseString insertString:@"_" atIndex:index];
+            index++;
+        }
+        index++;
+    }
+    return [snakeCaseString.lowercaseString replace:@" " with:@""];
+}
+
+- (NSString *)ucFirst  {
+    if (self.length <= 1) {
+        return self.uppercaseString;
+    } else {
+        return str(@"%@%@",[[self substringToIndex:1] uppercaseString],
+                            [self substringFromIndex:1]);
+    }
+}
+
+- (NSString *)lcFirst {
+    if (self.length <= 1) {
+        return self.lowercaseString;
+    } else {
+        return str(@"%@%@",[[self substringToIndex:1] lowercaseString],
+                            [self substringFromIndex:1]);
+    }
+}
+
+-(BOOL)endsWith:(NSString *)compare{
+    NSPredicate *fltr = [NSPredicate predicateWithFormat:@"self ENDSWITH %@",compare];
+    return [fltr evaluateWithObject:self];
+}
+
+-(BOOL)startsWith:(NSString *)compare{
+    //[c] for case insensitive
+    //NSPredicate *fltr = [NSPredicate predicateWithFormat:@"self BEGINSWITH[c] %@",compare];
+    NSPredicate *fltr = [NSPredicate predicateWithFormat:@"self BEGINSWITH %@",compare];
+    return [fltr evaluateWithObject:self];
 }
 
 @end

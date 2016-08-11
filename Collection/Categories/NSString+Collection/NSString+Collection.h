@@ -30,4 +30,32 @@
 
 - (NSString*) trimLeft;
 - (NSString*) trimRight;
+
+/**
+ * Converts @"this text" to @"thisText" or @"a_text" to @"aText"
+ */
+- (NSString *)camelCase;
+
+/**
+ * Converts @"this text" to @"ThisText" or @"a_text" to @"AText"
+ */
+- (NSString *)pascalCase;
+
+/** 
+ Converts @"fooBar" to @"foo_bar"
+ */
+- (NSString *)snakeCase;
+
+/** 
+ * Capitalizes first letter
+ */
+- (NSString *)ucFirst;
+
+/**
+ * Lowercases first letter
+ */
+- (NSString *)lcFirst;
+
+-(BOOL)endsWith:(NSString*)compare;
+-(BOOL)startsWith:(NSString*)compare;
 @end
