@@ -58,4 +58,5 @@
 
 -(BOOL)endsWith:(NSString*)compare;
 -(BOOL)startsWith:(NSString*)compare;
+-(BOOL)contains:(NSString*)compare;
 @end

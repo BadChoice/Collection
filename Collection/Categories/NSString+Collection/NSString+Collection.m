@@ -143,4 +143,12 @@
     return [fltr evaluateWithObject:self];
 }
 
+-(BOOL)contains:(NSString *)compare{
+    //[c] for case insensitive
+    //NSPredicate *fltr = [NSPredicate predicateWithFormat:@"self BEGINSWITH[c] %@",compare];
+    NSPredicate *fltr = [NSPredicate predicateWithFormat:@"self CONTAINS %@",compare];
+    return [fltr evaluateWithObject:self];
+}
+
+
 @end

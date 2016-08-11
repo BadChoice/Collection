@@ -118,6 +118,11 @@
     XCTAssertFalse  ( [@"Hello world" startsWith:@"World" ]);
 }
 
+-(void)testContains{
+    XCTAssertTrue   ( [@"Hello world" contains:@"lo wo" ]);
+    XCTAssertFalse  ( [@"Hello world" contains:@"lo Wo" ]);
+    XCTAssertFalse  ( [@"Hello world" contains:@"byebye" ]);
+}
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
