@@ -10,13 +10,18 @@
 
 @interface NSString (Collection)
 
++(NSString*)repeat:(NSString*)text times:(int)times;
+
 - (NSArray*)  explode:(NSString*)delimiter;
 - (NSString*) initials;
 - (NSNumber*) toNumber;
 - (NSString*) append:(NSString*)append;
 - (NSString*) prepend:(NSString*)prepend;
+- (NSString*) substr:(int)from;
+- (NSString*) substr:(int)from length:(int)length;
 
 - (NSString*)replace:(NSString*)character with:(NSString*)replace;
+
 
 /**
  Trims spaces on both ends
@@ -59,4 +64,7 @@
 -(BOOL)endsWith:(NSString*)compare;
 -(BOOL)startsWith:(NSString*)compare;
 -(BOOL)contains:(NSString*)compare;
+
+-(NSString*)lpad:(int)lenght string:(NSString*)string;
+-(NSString*)rpad:(int)lenght string:(NSString*)string;
 @end

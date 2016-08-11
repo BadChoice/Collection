@@ -9,9 +9,9 @@
 #ifndef RVCollection_h
 #define RVCollection_h
 
-#import NSArray+Collection.h
-#import NSDictionary+Collection.h
-#import NSString+Collection.h
+#import "NSArray+Collection.h"
+#import "NSDictionary+Collection.h"
+#import "NSString+Collection.h"
 
 
 #endif /* Collection_h */

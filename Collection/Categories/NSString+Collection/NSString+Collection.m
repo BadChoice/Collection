@@ -13,6 +13,16 @@
 
 @implementation NSString (Collection)
 
+
++(NSString*)repeat:(NSString*)text times:(int)times{
+    if(times <= 0) return @"";
+    NSMutableString* str = [NSMutableString string];
+    for(int i = 0; i < times; i++){
+        [str appendString:text];
+    }
+    return str;
+}
+
 -(NSArray*)explode:(NSString*)delimiter{
     return [self componentsSeparatedByString:delimiter];
 }
@@ -39,6 +49,20 @@
     return [prepend stringByAppendingString:self];
 }
 
+-(NSString*) substr:(int)from{
+    if(from >=0) return [self substringFromIndex:from];
+    else         return [self substringFromIndex:self.length + from];
+}
+
+-(NSString*)substr:(int)from length:(int)length{
+    if(from >=0){
+        return [self substringWithRange:NSMakeRange(from,length)];
+    }
+    else{
+        return [self substringWithRange:NSMakeRange(self.length + from,length)];
+    }
+}
+
 -(NSString*)trim{
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
@@ -50,6 +74,8 @@
 -(NSString*)replace:(NSString*)character with:(NSString*)replace{
     return [self stringByReplacingOccurrencesOfString:character withString:replace];
 }
+
+
 
 - (NSString *)trimLeft{
     NSCharacterSet *characterSet = [NSCharacterSet whitespaceCharacterSet];
@@ -148,6 +174,22 @@
     //NSPredicate *fltr = [NSPredicate predicateWithFormat:@"self BEGINSWITH[c] %@",compare];
     NSPredicate *fltr = [NSPredicate predicateWithFormat:@"self CONTAINS %@",compare];
     return [fltr evaluateWithObject:self];
+}
+
+-(NSString*)lpad:(int)lenght string:(NSString*)string{
+    int finalLength = MAX(0, lenght - (int)self.length);
+    NSString* padChars = [[NSString string] stringByPaddingToLength:finalLength
+                                                         withString:string
+                                                    startingAtIndex:0];
+    
+    return [padChars append:self];
+    
+}
+
+-(NSString*)rpad:(int)lenght string:(NSString*)string{
+    return [self stringByPaddingToLength:MAX((int)self.length,lenght)
+                              withString:string
+                         startingAtIndex:0];
 }
 
 

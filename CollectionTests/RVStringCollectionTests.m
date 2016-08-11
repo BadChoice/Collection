@@ -124,6 +124,76 @@
     XCTAssertFalse  ( [@"Hello world" contains:@"byebye" ]);
 }
 
+-(void)testLPad{
+    NSString * result = [@"hola" lpad:8 string:@"."];
+    XCTAssertTrue([@"....hola" isEqualToString:result]);
+    
+    NSString * result1 = [@"hola" lpad:9 string:@".*"];
+    XCTAssertTrue([@".*.*.hola" isEqualToString:result1]);
+    
+    NSString * result2 = [@"hola" lpad:8 string:@".*-_"];
+    XCTAssertTrue([@".*-_hola" isEqualToString:result2]);
+    
+    NSString * result3 = [@"hola" lpad:8 string:@".*-_/?¿"];
+    XCTAssertTrue([@".*-_hola" isEqualToString:result3]);
+    
+    NSString * result4 = [@"hola" lpad:2 string:@"."];
+    XCTAssertTrue([@"hola" isEqualToString:result4]);
+}
+
+-(void)testRPad{
+    NSString * result = [@"hola" rpad:8 string:@"."];
+    XCTAssertTrue([@"hola...." isEqualToString:result]);
+    
+    NSString * result1 = [@"hola" rpad:9 string:@".*"];
+    XCTAssertTrue([@"hola.*.*." isEqualToString:result1]);
+    
+    NSString * result2 = [@"hola" rpad:8 string:@".*-_"];
+    XCTAssertTrue([@"hola.*-_" isEqualToString:result2]);
+    
+    NSString * result3 = [@"hola" rpad:8 string:@".*-_/?¿"];
+    XCTAssertTrue([@"hola.*-_" isEqualToString:result3]);
+    
+    NSString * result4 = [@"hola" rpad:2 string:@"."];
+    XCTAssertTrue([@"hola" isEqualToString:result4]);
+}
+
+-(void)testRepeat{
+    NSString* result = [NSString repeat:@".*" times:4];
+    XCTAssertTrue([@".*.*.*.*" isEqualToString:result]);
+    
+    NSString* result2 = [NSString repeat:@".*" times:-4];
+    XCTAssertTrue([@"" isEqualToString:result2]);
+}
+
+-(void)testSubstring{
+    NSString* result = [@"a string to cut" substr:2];
+    XCTAssertTrue([@"string to cut" isEqualToString:result]);
+    
+    NSString* result2 = [@"a string to cut" substr:4];
+    XCTAssertTrue([@"ring to cut" isEqualToString:result2]);
+    
+    NSString* result3 = [@"123456" substr:-3];
+    XCTAssertTrue([@"456" isEqualToString:result3]);
+    
+    NSString* result4 = [@"123456" substr:-2];
+    XCTAssertTrue([@"56" isEqualToString:result4]);
+}
+
+-(void)testSubstring2{
+    NSString* result = [@"a string to cut" substr:2 length:6];
+    XCTAssertTrue([@"string" isEqualToString:result]);
+    
+    NSString* result2 = [@"a string to cut" substr:4 length:2];
+    XCTAssertTrue([@"ri" isEqualToString:result2]);
+    
+    NSString* result3 = [@"123456" substr:-3 length:3];
+    XCTAssertTrue([@"456" isEqualToString:result3]);
+    
+    NSString* result4 = [@"123456" substr:-2 length:2];
+    XCTAssertTrue([@"56" isEqualToString:result4]);
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
