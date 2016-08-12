@@ -63,6 +63,7 @@
 
 - (NSString*)urlEncode;
 - (NSString*)urlDecode;
+- (NSString*)md5;
 
 -(BOOL)endsWith:(NSString*)compare;
 -(BOOL)startsWith:(NSString*)compare;

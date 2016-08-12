@@ -8,6 +8,7 @@
 
 #import "NSString+Collection.h"
 #import "NSArray+Collection.h"
+#import <CommonCrypto/CommonDigest.h>
 
 #define str(A,...)          [NSString stringWithFormat:A,##__VA_ARGS__]
 
@@ -198,6 +199,20 @@
 
 -(NSString*)urlDecode{
     return [self stringByRemovingPercentEncoding];
+}
+
+-(NSString*)md5{
+    const char *cStr = [self UTF8String];
+    unsigned char digest[16];
+    
+    CC_MD5(cStr, (CC_LONG)strlen(cStr), digest);
+    
+    NSMutableString *md5 = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
+        [md5 appendFormat:@"%02x", digest[i]];
+    }
+    return md5;
 }
 
 
