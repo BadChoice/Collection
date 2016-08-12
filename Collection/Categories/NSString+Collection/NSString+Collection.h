@@ -61,6 +61,9 @@
  */
 - (NSString *)lcFirst;
 
+- (NSString*)urlEncode;
+- (NSString*)urlDecode;
+
 -(BOOL)endsWith:(NSString*)compare;
 -(BOOL)startsWith:(NSString*)compare;
 -(BOOL)contains:(NSString*)compare;

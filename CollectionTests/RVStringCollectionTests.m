@@ -197,6 +197,13 @@
     XCTAssertTrue([@"56" isEqualToString:result4]);
 }
 
+-(void)testUrlEncode{
+    NSString* initialUrl = @"http://hey how are you.com&potatoe";
+    NSString* encoded = initialUrl.urlEncode;
+    XCTAssertFalse([initialUrl isEqualToString:encoded]);
+    XCTAssertTrue ([initialUrl isEqualToString:encoded.urlDecode]);
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{

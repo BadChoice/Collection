@@ -192,5 +192,13 @@
                          startingAtIndex:0];
 }
 
+-(NSString*)urlEncode{
+    return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
+}
+
+-(NSString*)urlDecode{
+    return [self stringByRemovingPercentEncoding];
+}
+
 
 @end
