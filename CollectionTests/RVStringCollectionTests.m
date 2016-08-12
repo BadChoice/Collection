@@ -178,6 +178,9 @@
     
     NSString* result4 = [@"123456" substr:-2];
     XCTAssertTrue([@"56" isEqualToString:result4]);
+    
+    NSString* result5 = [@"1" substr:-2];
+    XCTAssertTrue([@"1" isEqualToString:result5]);
 }
 
 -(void)testSubstring2{

@@ -50,8 +50,8 @@
 }
 
 -(NSString*) substr:(int)from{
-    if(from >=0) return [self substringFromIndex:from];
-    else         return [self substringFromIndex:self.length + from];
+    if(from >=0) return [self substringFromIndex:MIN(from,(int)self.length)];
+    else         return [self substringFromIndex:MAX((int)self.length + from, 0 )];
 }
 
 -(NSString*)substr:(int)from length:(int)length{
