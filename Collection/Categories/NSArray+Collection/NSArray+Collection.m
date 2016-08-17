@@ -55,6 +55,17 @@
     return found;
 }
 
+-(BOOL)doesntContain:(BOOL (^)(id object))checker{
+    bool __block found = false;
+    [self eachWithIndex:^(id object, int index, BOOL *stop) {
+        if (checker(object)){
+            found = true;
+            *stop = true;
+        }
+    }];
+    return ! found;
+}
+
 - (NSArray*)where:(NSString*)keypath like:(id)value{
     return [self whereAny:@[keypath] like:value];
 }

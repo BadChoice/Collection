@@ -232,4 +232,17 @@
 }
 
 
+-(void)testDoesntContain{    
+    BOOL doesNotContain1 = [@[@1,@2,@3,@4] doesntContain:^BOOL(id object) {
+        return [object isEqual:@1];
+    }];
+    
+    BOOL doesNotContain10 = [@[@1,@2,@3,@4] doesntContain:^BOOL(id object) {
+        return [object isEqual:@10];
+    }];
+    
+    XCTAssertFalse ( doesNotContain1  );
+    XCTAssertTrue  ( doesNotContain10 );
+}
+
 @end

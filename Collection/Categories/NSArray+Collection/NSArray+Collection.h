@@ -45,6 +45,10 @@
  */
 - (BOOL)contains:(BOOL (^)(id object))checker;
 
+/**
+ * @return BOOL if no object passes the truth test
+ */
+- (BOOL)doesntContain:(BOOL (^)(id object))checker;
 
 /**
  * @return NSArray elements where the keypath contains the value
