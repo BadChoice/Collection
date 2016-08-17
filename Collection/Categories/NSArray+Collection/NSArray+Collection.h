@@ -241,6 +241,10 @@
  */
 -(NSDictionary*)mapToAssoc:(NSArray*(^)(id obj, NSUInteger idx))block;
 
+/**
+ * Convenience method for creating the counted set
+ */
+-(NSCountedSet*)countedSet;
 
 /** 
  * Returns an string concatedated with delimiter

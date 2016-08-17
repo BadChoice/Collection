@@ -321,6 +321,10 @@
     } carry:[[NSMutableDictionary alloc] init]];
 }
 
+-(NSCountedSet*)countedSet{
+    return [NSCountedSet setWithArray:self];
+}
+
 -(NSString*)implode:(NSString*)delimiter{
     return [self componentsJoinedByString:delimiter];
 }
