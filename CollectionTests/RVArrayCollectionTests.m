@@ -245,4 +245,12 @@
     XCTAssertTrue  ( doesNotContain10 );
 }
 
+-(void)testSumWith{
+    NSNumber* result = [@[@1,@2,@3] sumWith:^NSNumber *(NSNumber* object) {
+        return @(object.floatValue*2);
+    }];
+    
+    XCTAssertTrue([@12 floatValue] == [result floatValue]);
+}
+
 @end

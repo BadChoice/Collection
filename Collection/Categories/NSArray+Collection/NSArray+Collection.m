@@ -351,6 +351,12 @@
 - (NSNumber*)min                    { return [self operator:@"min" keypath:nil];    }
 - (NSNumber*)min:(NSString*)keypath { return [self operator:@"min" keypath:keypath];}
 
+- (NSNumber*)sumWith:(NSNumber*(^)(id object))block{
+    return [self reduce:^id(NSNumber* carry, id object) {
+        return @(carry.floatValue + block(object).floatValue);
+    } carry:@(0)];
+}
+
 //==============================================
 #pragma mark - Set operations
 //==============================================

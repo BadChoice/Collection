@@ -251,6 +251,7 @@
  */
 -(NSString*)implode:(NSString*)delimiter;
 
+
 #pragma mark - Operators
 - (NSArray*)intersect:(NSArray*)b;
 - (NSArray*)union:(NSArray*)b;
@@ -263,6 +264,7 @@
 #pragma mark - Set Operators
 - (NSNumber*)sum;
 - (NSNumber*)sum:(NSString*)keypath;
+- (NSNumber*)sumWith:(NSNumber*(^)(id object))block;
 - (NSNumber*)avg;
 - (NSNumber*)avg:(NSString*)keypath;
 - (NSNumber*)max;
