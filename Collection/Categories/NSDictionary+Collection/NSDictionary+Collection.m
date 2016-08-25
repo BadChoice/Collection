@@ -10,6 +10,24 @@
 
 @implementation NSDictionary (Collection)
 
+//===================================
+#pragma mark - Converters
+//===================================
++(NSDictionary*)fromData:(NSData*)data{
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    return json;
+}
+
+-(NSString*)toString{
+    NSError * err;
+    NSData * jsonData = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:&err];
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
+
+//===================================
+#pragma mark - Collection
+//===================================
 - (void)each:(void(^)(id key, id object))operation{
     
     [self enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {

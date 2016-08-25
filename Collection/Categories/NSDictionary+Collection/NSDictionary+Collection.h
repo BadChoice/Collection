@@ -10,6 +10,9 @@
 
 @interface NSDictionary (Collection)
 
++ (NSDictionary*)fromData:(NSData*)data;
+- (NSString*)toString;
+
 - (void)each:(void(^)(id key, id object))operation;
 - (NSDictionary*)filter:(BOOL (^)(id key, id object))condition;
 - (NSDictionary*)reject:(BOOL (^)(id key, id object))condition;
