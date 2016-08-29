@@ -13,7 +13,10 @@ Copy the category files to your project or just
     pod 'Collection' 
 ```
 
-## Examples
+## Array Examples
+
+Just some examples, check the .h or the tests to see them all
+
 
 ```
     NSArray* array = @[@1,@3,@4,@5,@6];
@@ -113,4 +116,38 @@ Copy the category files to your project or just
     [self printArray:array2];
 ```
 
+## Dictionary Examples
 
+Just some examples, check the .h or the tests to see them all
+    
+```
+    NSDictionary* filtered = [@{@"pass":@0,@"dontPass":@1} filter:^BOOL(id key, id object) {
+        return [object floatValue] == 0;
+    }];
+```
+
+```
+    NSDictionary* result = [@{@"toBeMapped":@"value",@"toBeMapped2":@"value2"} map:^id(id key, id object) {
+    return [key stringByAppendingString:object];
+    }];
+```
+
+## String Examples
+
+Just some examples, check the .h or the tests to see them all
+
+```
+    NSArray* result         = [@"hola;que;tal" explode:@";"];
+    NSArray* expectation    = @[@"hola",@"que",@"tal"];
+    XCTAssertTrue([result isEqual:expectation]);
+```
+
+```
+    NSString* result = [@"   trim   " trim];
+    XCTAssertTrue( [result isEqualToString:@"trim"]);
+```
+
+```
+    NSString* result = @"this should be camelcased".camelCase;
+    XCTAssertTrue( [result isEqualToString:@"thisShouldBeCamelcased"]);
+```
