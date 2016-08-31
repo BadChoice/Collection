@@ -52,7 +52,7 @@
 }
 
 - (NSDictionary*)map:(id (^)(id key, id object))callback{
-    NSMutableDictionary* newDictionary = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* newDictionary = [NSMutableDictionary new];
     [self each:^(id key, id object) {
         newDictionary[key] = callback(key,object);
     }];

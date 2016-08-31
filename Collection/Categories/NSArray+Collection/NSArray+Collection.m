@@ -75,7 +75,7 @@
 }
 
 - (NSArray*)whereAny:(NSArray*)keyPaths is:(id)value{
-    NSMutableArray* predicates = [[NSMutableArray alloc] init];
+    NSMutableArray* predicates = [NSMutableArray new];
     
     [keyPaths each:^(NSString* keypath) {
         NSPredicate* predicate = [NSPredicate predicateWithFormat:@"%K = %@",keypath,value];
@@ -87,7 +87,7 @@
 }
 
 - (NSArray*)whereAny:(NSArray*)keyPaths like:(id)value{
-    NSMutableArray* predicates = [[NSMutableArray alloc] init];
+    NSMutableArray* predicates = [NSMutableArray new];
     
     [keyPaths each:^(NSString* keypath) {
         NSPredicate* predicate = [NSPredicate predicateWithFormat:@"%K contains[c] %@",keypath,value];
@@ -174,7 +174,7 @@
 }
 
 - (NSArray*)flatMap:(id (^)(id obj, NSUInteger idx))block{
-    NSMutableArray* results = [[NSMutableArray alloc] init];
+    NSMutableArray* results = [NSMutableArray new];
     [self each:^(NSArray* array) {
         [results addObject:[array map:^id(id obj, NSUInteger idx) {
             return block(obj,idx);
@@ -184,7 +184,7 @@
 }
 
 - (NSArray*)flatMap:(NSString*)key block:(id (^)(id obj, NSUInteger idx))block{
-    NSMutableArray* results = [[NSMutableArray alloc] init];
+    NSMutableArray* results = [NSMutableArray new];
     [self each:^(id object) {
         [results addObject:[[object valueForKey:key] map:^id(id obj, NSUInteger idx) {
             return block(obj,idx);
@@ -194,7 +194,7 @@
 }
 
 - (NSArray*)flatten{
-    NSMutableArray* results = [[NSMutableArray alloc] init];
+    NSMutableArray* results = [NSMutableArray new];
     [self each:^(NSArray* array) {
         [results addObjectsFromArray:array];
     }];
@@ -202,7 +202,7 @@
 }
 
 - (NSArray*)flatten:(NSString*)keypath{
-    NSMutableArray* results = [[NSMutableArray alloc] init];
+    NSMutableArray* results = [NSMutableArray new];
     [self each:^(id object) {
         [results addObjectsFromArray:[object valueForKeyPath:keypath]];
     }];
@@ -266,10 +266,10 @@
 - (NSDictionary*)expand:(NSString *)keypath unique:(BOOL)unique{
     if(unique) keypath = [NSString stringWithFormat:@"%@.@distinctUnionOfObjects.self",keypath];
     
-    NSMutableDictionary* result = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary* result = [NSMutableDictionary new];
     [self each:^(id object) {
         [[object valueForKeyPath:keypath] each:^(id key) {
-            if(result[key] == nil) result[key] = [[NSMutableArray alloc] init];
+            if(result[key] == nil) result[key] = [NSMutableArray new];
             [result[key] addObject:object];
         }];
     }];
@@ -318,7 +318,7 @@
     return [pairs reduce:^id(NSMutableDictionary* dict, NSArray* mapped) {
         dict[mapped[0]] = mapped[1];
         return dict;
-    } carry:[[NSMutableDictionary alloc] init]];
+    } carry:[NSMutableDictionary new]];
 }
 
 -(NSCountedSet*)countedSet{
