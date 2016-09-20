@@ -11,6 +11,7 @@
 @interface NSDictionary (Collection)
 
 + (NSDictionary*)fromData:(NSData*)data;
++ (NSDictionary*)fromString:(NSString*)string;
 - (NSString*)toString;
 
 - (void)each:(void(^)(id key, id object))operation;

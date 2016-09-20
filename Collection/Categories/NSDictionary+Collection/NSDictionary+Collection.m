@@ -19,6 +19,11 @@
     return json;
 }
 
++(NSDictionary*)fromString:(NSString*)string{
+    NSData* data = [string dataUsingEncoding:NSUTF8StringEncoding];
+    return [self.class fromData:data];
+}
+
 -(NSString*)toString{
     NSError * err;
     NSData * jsonData = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:&err];

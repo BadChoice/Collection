@@ -10,7 +10,7 @@
 
 @interface NSString (Collection)
 
-+(NSString*)repeat:(NSString*)text times:(int)times;
++ (NSString*)repeat:(NSString*)text times:(int)times;
 
 - (NSArray*)  explode:(NSString*)delimiter;
 - (NSString*) initials;

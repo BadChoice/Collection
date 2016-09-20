@@ -23,6 +23,12 @@
     [super tearDown];
 }
 
+- (void)testFromString{    
+    NSDictionary* result = [NSDictionary fromString:@"{\"hello\":\"how are you\"}"];
+    NSDictionary* expectation =@{@"hello":@"how are you" };
+    XCTAssertTrue([result isEqualToDictionary:expectation]);
+}
+
 - (void)testFilter {
     NSDictionary* filtered = [@{@"pass":@0,@"dontPass":@1} filter:^BOOL(id key, id object) {
         return [object floatValue] == 0;
