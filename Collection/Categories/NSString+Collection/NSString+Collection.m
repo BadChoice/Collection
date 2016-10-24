@@ -76,6 +76,18 @@
     return [self stringByReplacingOccurrencesOfString:character withString:replace];
 }
 
+- (NSArray*) split{
+    return [self split:1];
+}
+
+- (NSArray*) split:(int)splitLength{
+    NSMutableArray *array = [NSMutableArray array];
+    for (int i = 0; i < self.length; i = i+splitLength) {
+        [array addObject: [self substr:i length:MIN(splitLength, self.length - i)]];
+    }
+    return array;
+}
+
 
 
 - (NSString *)trimLeft{

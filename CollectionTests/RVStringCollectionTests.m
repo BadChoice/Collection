@@ -197,6 +197,28 @@
     XCTAssertTrue([@"56" isEqualToString:result4]);
 }
 
+-(void)testSplit{
+    NSArray* result = [@"123456789" split:3];
+    XCTAssertTrue(result.count == 3);
+    XCTAssertTrue([result[0] isEqualToString:@"123"]);
+    XCTAssertTrue([result[1] isEqualToString:@"456"]);
+    XCTAssertTrue([result[2] isEqualToString:@"789"]);
+    
+    result = [@"12345678" split:3];
+    XCTAssertTrue(result.count == 3);
+    XCTAssertTrue([result[0] isEqualToString:@"123"]);
+    XCTAssertTrue([result[1] isEqualToString:@"456"]);
+    XCTAssertTrue([result[2] isEqualToString:@"78"]);
+    
+    result = [@"12345678" split:10];
+    XCTAssertTrue(result.count == 1);
+    XCTAssertTrue([result[0] isEqualToString:@"12345678"]);
+    
+    result = [@"12345678" split];
+    XCTAssertTrue(result.count == 8);
+    XCTAssertTrue([result[4] isEqualToString:@"5"]);
+}
+
 -(void)testUrlEncode{
     NSString* initialUrl = @"http://hey how are you.com&potatoe";
     NSString* encoded = initialUrl.urlEncode;

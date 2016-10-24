@@ -22,6 +22,9 @@
 
 - (NSString*)replace:(NSString*)character with:(NSString*)replace;
 
+- (NSArray*) split;
+- (NSArray*) split:(int)splitLength;
+
 
 /**
  Trims spaces on both ends
