@@ -64,13 +64,17 @@
  */
 - (NSString *)lcFirst;
 
-- (NSString*)urlEncode;
-- (NSString*)urlDecode;
-- (NSString*)md5;
+- (NSString*) urlEncode;
+- (NSString*) urlDecode;
+- (NSString*) md5;
+- (NSString*) toBase64;
++ (NSString*) fromBase64;
++ (NSString*) fromHex:(NSString *)str;
+- (NSString*) toHex;
 
--(BOOL)endsWith:(NSString*)compare;
--(BOOL)startsWith:(NSString*)compare;
--(BOOL)contains:(NSString*)compare;
+-(BOOL)endsWith:    (NSString*)compare;
+-(BOOL)startsWith:  (NSString*)compare;
+-(BOOL)contains:    (NSString*)compare;
 
 -(NSString*)lpad:(int)lenght string:(NSString*)string;
 -(NSString*)rpad:(int)lenght string:(NSString*)string;

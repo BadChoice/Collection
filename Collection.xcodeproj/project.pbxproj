@@ -15,7 +15,6 @@
 		76255B201D11B7D900E6ADEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76255B1E1D11B7D900E6ADEB /* LaunchScreen.storyboard */; };
 		76255B2B1D11B7D900E6ADEB /* RVArrayCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 76255B2A1D11B7D900E6ADEB /* RVArrayCollectionTests.m */; };
 		76255B391D11B81900E6ADEB /* NSArray+Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = 76255B381D11B81900E6ADEB /* NSArray+Collection.m */; };
-		76255B3C1D11B87400E6ADEB /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 76255B3A1D11B87400E6ADEB /* readme.md */; };
 		76255B3D1D11B87400E6ADEB /* Collection.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = 76255B3B1D11B87400E6ADEB /* Collection.podspec.json */; };
 		76274F931D5B40E000C4014A /* NSDictionary+Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = 76274F921D5B40E000C4014A /* NSDictionary+Collection.m */; };
 		76274F961D5B40FE00C4014A /* NSString+Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = 76274F951D5B40FE00C4014A /* NSString+Collection.m */; };
@@ -222,7 +221,7 @@
 		76255B051D11B7D900E6ADEB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Revo;
 				TargetAttributes = {
 					76255B0C1D11B7D900E6ADEB = {
@@ -283,7 +282,6 @@
 				76255B181D11B7D900E6ADEB /* ViewController.m in Sources */,
 				76255B151D11B7D900E6ADEB /* AppDelegate.m in Sources */,
 				76255B391D11B81900E6ADEB /* NSArray+Collection.m in Sources */,
-				76255B3C1D11B87400E6ADEB /* readme.md in Sources */,
 				76274F931D5B40E000C4014A /* NSDictionary+Collection.m in Sources */,
 				76255B121D11B7D900E6ADEB /* main.m in Sources */,
 			);
@@ -345,8 +343,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -390,8 +390,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
