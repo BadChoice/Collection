@@ -14,6 +14,7 @@
 #pragma mark - Converters
 //===================================
 +(NSDictionary*)fromData:(NSData*)data{
+    if(!data) return nil;
     NSError* error;
     NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     return json;
