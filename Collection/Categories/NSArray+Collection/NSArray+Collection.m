@@ -7,6 +7,7 @@
 //
 
 #import "NSArray+Collection.h"
+#import "NSString+Collection.h"
 
 @implementation NSArray (Collection)
 
@@ -327,6 +328,11 @@
 
 -(NSString*)implode:(NSString*)delimiter{
     return [self componentsJoinedByString:delimiter];
+}
+
+-(NSString*)toString{
+    NSString* exploded = [self implode:@","];
+    return [NSString stringWithFormat:@"[%@]",exploded];
 }
 
 //==============================================

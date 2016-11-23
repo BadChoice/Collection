@@ -251,6 +251,11 @@
  */
 -(NSString*)implode:(NSString*)delimiter;
 
+/**
+ * Converts the array into json string
+ * of type [1,2,3]
+ */
+-(NSString*)toString;
 
 #pragma mark - Operators
 - (NSArray*)intersect:(NSArray*)b;

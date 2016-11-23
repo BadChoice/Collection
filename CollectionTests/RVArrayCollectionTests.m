@@ -253,4 +253,13 @@
     XCTAssertTrue([@12 floatValue] == [result floatValue]);
 }
 
+-(void)testToString{
+    
+    NSString* result        = @[@1,@2,@3].toString;
+    NSString* expectation   = @"[1,2,3]";
+    
+    XCTAssertTrue([result isEqualToString:expectation]);
+    
+}
+
 @end
