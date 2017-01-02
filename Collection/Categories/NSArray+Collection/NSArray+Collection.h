@@ -230,6 +230,21 @@
  */
 -(id)minObject:(NSString*)keypath;
 
+/**
+ * Returns a random object from within the array
+ */
+-(id)random;
+
+/**
+ * Returns an array of `quantity` number of object from the array
+ */
+-(NSArray*)random:(int)quantity;
+
+/**
+ * Returns the same array with the items sorted randomly
+ */
+-(NSArray*)shuffled;
+
 
 /**
  *zip lets you take one collection, and pair every element in that collection with the

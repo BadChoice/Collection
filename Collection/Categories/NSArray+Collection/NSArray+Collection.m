@@ -301,6 +301,23 @@
     } carry:self.firstObject];
 }
 
+-(id)random{
+    NSUInteger randomIndex = arc4random() % self.count;
+    return self[randomIndex];
+}
+
+-(NSArray*)random:(int)quantity{
+    return [self.shuffled take:quantity];
+}
+
+-(NSArray*)shuffled{
+    NSMutableArray* copy = self.mutableCopy;
+    for (NSUInteger i = self.count; i > 1; i--)
+        [copy exchangeObjectAtIndex:i - 1 withObjectAtIndex:arc4random_uniform((u_int32_t)i)];
+    
+    return copy;
+}
+
 -(NSArray*)zip:(NSArray*)other{
     NSInteger size = MIN(self.count, other.count);
     
