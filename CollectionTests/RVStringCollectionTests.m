@@ -195,6 +195,9 @@
     
     NSString* result4 = [@"123456" substr:-2 length:2];
     XCTAssertTrue([@"56" isEqualToString:result4]);
+    
+    NSString* result5 = [@"abc" substr:0 length:6];
+    XCTAssertTrue([@"abc" isEqualToString:result5]);
 }
 
 -(void)testSplit{

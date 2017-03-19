@@ -57,7 +57,7 @@
 
 -(NSString*)substr:(int)from length:(int)length{
     if(from >=0){
-        return [self substringWithRange:NSMakeRange(from,length)];
+        return [self substringWithRange:NSMakeRange(from, MIN(length,self.length))];
     }
     else{
         return [self substringWithRange:NSMakeRange(self.length + from,length)];
