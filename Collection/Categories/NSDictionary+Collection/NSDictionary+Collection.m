@@ -21,7 +21,7 @@
 }
 
 +(NSDictionary*)fromString:(NSString*)string{
-    if(!string) return nil;
+    if( ! string || ! [string isKindOfClass:NSString.class]) return nil;    
     NSData* data = [string dataUsingEncoding:NSUTF8StringEncoding];
     return [self.class fromData:data];
 }
