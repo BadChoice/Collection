@@ -189,6 +189,11 @@
     return [fltr evaluateWithObject:self];
 }
 
+-(BOOL)matches:(NSString*)regexp{
+    NSPredicate *regexpTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regexp];    
+    return ([regexpTest evaluateWithObject: self]);
+}
+
 -(NSString*)lpad:(int)lenght string:(NSString*)string{
     int finalLength = MAX(0, lenght - (int)self.length);
     NSString* padChars = [[NSString string] stringByPaddingToLength:finalLength

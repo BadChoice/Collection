@@ -75,6 +75,7 @@
 -(BOOL)endsWith:    (NSString*)compare;
 -(BOOL)startsWith:  (NSString*)compare;
 -(BOOL)contains:    (NSString*)compare;
+-(BOOL)matches:     (NSString*)regexp;
 
 -(NSString*)lpad:(int)lenght string:(NSString*)string;
 -(NSString*)rpad:(int)lenght string:(NSString*)string;

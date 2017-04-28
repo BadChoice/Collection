@@ -229,6 +229,20 @@
     XCTAssertTrue ([initialUrl isEqualToString:encoded.urlDecode]);
 }
 
+-(void)testMatches{
+    NSString* theString           = @"This is a string to match";
+    NSString* phoneStringHard     = @"669 686 571";
+    NSString* phoneStringEasy     = @"669686571";
+    
+    XCTAssertTrue  ( [phoneStringEasy matches:@"(\\d+[-. ]?)+"] );
+    XCTAssertTrue  ( [phoneStringHard matches:@"(\\d+[-. ]?)+"] );
+    XCTAssertFalse ( [theString   matches:@"^(\\d)+$"] );
+    
+    XCTAssertTrue ( [theString matches:@"[a-zA-Z ]+"] );
+    XCTAssertFalse( [theString matches:@"1234"] );
+    XCTAssertTrue( [theString matches:@"^This.*"] );
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
