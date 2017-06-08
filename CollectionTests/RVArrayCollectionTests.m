@@ -259,6 +259,24 @@
     NSString* expectation   = @"[1,2,3]";
     
     XCTAssertTrue([result isEqualToString:expectation]);
+}
+
+-(void)testCrossJoin{
+    
+    NSArray* result  = [@[@"a", @"b"] crossJoin: @[@1, @2] ];
+    
+    NSArray* result2 = [@[@1, @2] crossJoin: @[
+                                               @[@"a", @"b"],
+                                               @[@"I", @"II", @"III"]
+                                               ] ];
+
+    XCTAssertEqual(4,  result.count);
+    XCTAssertEqual(12, result2.count);
+    
+    NSArray* expectation    = @[@"a", @1];
+    NSArray* expectation2   = @[@1,@"b",@"II"];
+    XCTAssertTrue( [result  containsObject:expectation] );
+    XCTAssertTrue( [result2 containsObject:expectation2 ] );
     
 }
 

@@ -422,5 +422,29 @@
     return [self valueForKeyPath:finalKeypath];
 }
 
+-(NSArray*)crossJoin:(NSArray*)list{
+    if([list.firstObject isKindOfClass:NSArray.class]){
+        return [self.class cartesianProduct:[@[self] join:list]];
+    }
+    return [self.class cartesianProduct:@[self, list]];
+}
+
++(NSArray*)cartesianProduct:(NSArray*)arrays{
+    int arraysCount = (int)arrays.count;
+    unsigned long resultSize = 1;
+    for (NSArray *array in arrays)
+        resultSize *= array.count;
+    NSMutableArray *product = [NSMutableArray arrayWithCapacity:resultSize];
+    for (unsigned long i = 0; i < resultSize; ++i) {
+        NSMutableArray *cross = [NSMutableArray arrayWithCapacity:arraysCount];
+        [product addObject:cross];
+        unsigned long n = i;
+        for (NSArray *array in arrays) {
+            [cross addObject:[array objectAtIndex:n % array.count]];
+            n /= array.count;
+        }
+    }
+    return product;
+}
 
 @end

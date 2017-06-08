@@ -281,6 +281,12 @@
 - (NSArray*)distinct;
 - (NSArray*)distinct:(NSString*)keypath;
 
+/**
+ * Returns all the combinations with all array items
+ */
+- (NSArray*)crossJoin:(NSArray*)list;
++ (NSArray*)cartesianProduct:(NSArray*)arrays; //used by the cross join
+
 #pragma mark - Set Operators
 - (NSNumber*)sum;
 - (NSNumber*)sum:(NSString*)keypath;
