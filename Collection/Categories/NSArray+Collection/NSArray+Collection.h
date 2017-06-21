@@ -73,13 +73,11 @@
 
 /**
  * performs the operation to each element
- * @return void
  */
 - (void)each:(void(^)(id object))operation;
 
 /**
  * performs the operation to each element
- * @return void
  */
 - (void)eachWithIndex:(void(^)(id object, int index, BOOL *stop))operation;
 
