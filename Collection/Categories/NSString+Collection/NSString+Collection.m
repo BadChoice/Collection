@@ -24,6 +24,13 @@
     return str;
 }
 
++(BOOL)isEmptyString:(NSString*)string{
+    if(string == nil) return true;
+    if([string isKindOfClass:NSNull.class]) return true;
+    if([string isEqualToString:@""]) return true;
+    return false;
+}
+
 -(NSArray*)explode:(NSString*)delimiter{
     return [self componentsSeparatedByString:delimiter];
 }
