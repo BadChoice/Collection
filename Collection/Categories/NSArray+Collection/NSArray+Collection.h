@@ -270,6 +270,11 @@
  */
 -(NSString*)toString;
 
+/** 
+ * Converts the array to json string
+ */
+-(NSString*)toJson;
+
 #pragma mark - Operators
 - (NSArray*)intersect:(NSArray*)b;
 - (NSArray*)union:(NSArray*)b;

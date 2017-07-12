@@ -352,6 +352,11 @@
     return [NSString stringWithFormat:@"[%@]",exploded];
 }
 
+-(NSString*)toJson{
+    NSError * err;
+    NSData * jsonData = [NSJSONSerialization dataWithJSONObject:self options:0 error:&err];
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
 //==============================================
 #pragma mark - Operators
 //==============================================
