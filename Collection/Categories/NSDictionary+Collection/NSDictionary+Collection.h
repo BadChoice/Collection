@@ -13,6 +13,7 @@
 + (NSDictionary*)fromData:(NSData*)data;
 + (NSDictionary*)fromString:(NSString*)string;
 - (NSString*)toString;
+- (NSDictionary*)except:(NSArray*)exceptKeys;
 
 - (void)each:(void(^)(id key, id object))operation;
 - (NSDictionary*)filter:(BOOL (^)(id key, id object))condition;

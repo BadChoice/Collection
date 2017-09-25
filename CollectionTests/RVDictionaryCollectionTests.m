@@ -56,6 +56,19 @@
     XCTAssertTrue([result isEqualToDictionary:expectation]);
 }
 
+-(void)testExcept{
+    
+    NSDictionary* result = [@{
+                            @"key1" : @"hello",
+                            @"key2" : @"world",
+                            @"key3" : @"forever"
+                            } except:@[@"key3", @"unexistingKey"]];
+                                       
+    XCTAssertTrue(2 == result.count);
+    XCTAssertNil(result[@"key3"]);
+    XCTAssertEqual(result[@"key2"], @"world");
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{

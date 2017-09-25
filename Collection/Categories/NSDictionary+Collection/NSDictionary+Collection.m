@@ -7,6 +7,7 @@
 //
 
 #import "NSDictionary+Collection.h"
+#import "NSArray+Collection.h"
 
 @implementation NSDictionary (Collection)
 
@@ -30,6 +31,14 @@
     NSError * err;
     NSData * jsonData = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:&err];
     return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
+
+- (NSDictionary*)except:(NSArray*)exceptKeys{
+    NSMutableDictionary* result = self.mutableCopy;
+    [exceptKeys each:^(NSString* key) {
+        [result removeObjectForKey:key];
+    }];
+    return result;
 }
 
 //===================================
