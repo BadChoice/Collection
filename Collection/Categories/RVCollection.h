@@ -13,7 +13,8 @@
 #import "NSDictionary+Collection.h"
 #import "NSString+Collection.h"
 
-#define isEqual(x,y)        ((x && [x isEqual:y]) || (!x && !y))
+//#define isEqual(x,y)        ((x && [x isEqual:y]) || (!x && !y))
+#define isEqual(x,y)        ((!isNull(x) && [x isEqual:y]) || (isNull(x) && isNull(y))) //To avoid new warnings
 #define valueOrNull(A)      A?A:[NSNull null]
 #define valueOr(A,B)        isNull(A)?B:A
 #define isNull(A)           (A == nil || [A isKindOfClass:NSNull.class])
