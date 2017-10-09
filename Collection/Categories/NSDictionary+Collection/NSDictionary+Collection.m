@@ -41,6 +41,15 @@
     return result;
 }
 
+- (NSDictionary*)only:(NSArray*)keysToKeep{
+    NSMutableDictionary* result = self.mutableCopy;
+    [result.allKeys each:^(id key) {
+        if( ! [keysToKeep containsObject:key] )
+           [result removeObjectForKey:key];
+    }];
+    return result;
+}
+
 //===================================
 #pragma mark - Collection
 //===================================
