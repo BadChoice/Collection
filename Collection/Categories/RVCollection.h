@@ -9,7 +9,7 @@
 #ifndef RVCollection_h
 #define RVCollection_h
 
-#import "NSArray+Collection.h"
+#import "NSArray+HighOrder.h"
 #import "NSDictionary+Collection.h"
 #import "NSString+Collection.h"
 

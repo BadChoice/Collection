@@ -250,6 +250,15 @@
     return [self reduce:block carry:nil];
 }
 
+- (id)pipe:(id (^)(NSArray* array))block{
+    return block(self);
+}
+
+- (id)when:(BOOL)condition block:(id (^)(NSArray* array))block{
+    if(condition) return block(self);
+    return self;
+}
+
 - (NSDictionary*)groupBy:(NSString*)keypath{
     return [self groupBy:keypath block:^NSString *(id object, NSString *key) {
         return key;

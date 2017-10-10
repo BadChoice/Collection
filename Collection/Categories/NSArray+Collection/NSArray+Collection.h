@@ -181,6 +181,18 @@
 - (id)reduce:(id(^)(id carry, id object))block carry:(id)carry;
 
 /**
+ * Final collection is run through the transformer
+ * and then the output of that is returned
+ */
+- (id)pipe:(id (^)(NSArray* array))block;
+
+/**
+ * If condition is true, the collection is run throught block and is result is returned
+ * if condition is false, it is ignored, and self is returned
+ */
+- (id)when:(BOOL)condition block:(id (^)(NSArray* array))block;
+
+/**
  * returns NSDictionary by grouping the array items by a given key:
  */
 - (NSDictionary*)groupBy:(NSString*)keypath;
