@@ -6,7 +6,6 @@
 //  Copyright © 2017 Revo. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "NSArray+Collection.h"
 
 @interface NSArray (HighOrder)
