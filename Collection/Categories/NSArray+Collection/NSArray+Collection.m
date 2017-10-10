@@ -23,6 +23,18 @@
     }]];
 }
 
+-(NSArray*)filterWith:(NSString *)keypath{
+    return [self filter:^BOOL(id object) {
+        return [[object valueForKeyPath:keypath] boolValue];
+    }];
+}
+
+-(NSArray*)rejectWith:(NSString *)keypath{
+    return [self reject:^BOOL(id object) {
+        return [[object valueForKeyPath:keypath] boolValue];
+    }];
+}
+
 - (id)first:(BOOL (^)(id object))condition{
     NSUInteger index = [self indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         return condition(obj);
@@ -450,6 +462,10 @@
         }
     }
     return product;
+}
+
+-(void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay{
+    
 }
 
 @end

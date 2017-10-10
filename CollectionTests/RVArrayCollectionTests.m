@@ -277,7 +277,32 @@
     NSArray* expectation2   = @[@1,@"b",@"II"];
     XCTAssertTrue( [result  containsObject:expectation] );
     XCTAssertTrue( [result2 containsObject:expectation2 ] );
+}
+
+-(void)test_filter_with{
+    NSArray* array = @[
+                       @{@"theKey": @1},
+                       @{@"theKey": @1},
+                       @{@"theKey": @0},
+                       @{@"theKey": @0}
+                       ];
+    NSArray* result = [array filterWith:@"theKey"];
     
+    XCTAssertEqual(2, result.count);
+    XCTAssertTrue([result.firstObject[@"theKey"] boolValue]);
+}
+
+-(void)test_reject_with{
+    NSArray* array = @[
+                       @{@"theKey": @1},
+                       @{@"theKey": @1},
+                       @{@"theKey": @0},
+                       @{@"theKey": @0}
+                       ];
+    NSArray* result = [array rejectWith:@"theKey"];
+    
+    XCTAssertEqual(2, result.count);
+    XCTAssertFalse([result.firstObject[@"theKey"] boolValue]);
 }
 
 @end

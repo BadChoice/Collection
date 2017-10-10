@@ -16,9 +16,19 @@
 - (NSArray*)filter:(BOOL (^)(id object))condition;
 
 /**
+ * @return NSArray with only the elements that keypath is true
+ */
+- (NSArray*)filterWith:(NSString*)keypath;
+
+/**
  * @return NSArray removing the elements that pass the truth test
  */
 - (NSArray*)reject:(BOOL (^)(id object))condition;
+
+/**
+ * @return NSArray without the elements that keypath is true
+ */
+- (NSArray*)rejectWith:(NSString*)keypath;
 
 /**
  * @return id first object that passes the truth test or `nil` if any
