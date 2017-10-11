@@ -177,6 +177,11 @@
     }
 }
 
+- (NSString*)withoutDiacritic{
+    return [self stringByFoldingWithOptions:NSDiacriticInsensitiveSearch
+                              locale:[NSLocale systemLocale]];
+}
+
 -(BOOL)endsWith:(NSString *)compare{
     NSPredicate *fltr = [NSPredicate predicateWithFormat:@"self ENDSWITH %@",compare];
     return [fltr evaluateWithObject:self];

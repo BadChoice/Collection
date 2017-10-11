@@ -243,6 +243,12 @@
     XCTAssertTrue( [theString matches:@"^This.*"] );
 }
 
+-(void)testRemoveAccents{
+    NSString* string = @"hello àáòòöüí";
+    NSString* result = string.withoutDiacritic;
+    XCTAssertTrue([result isEqualToString:@"hello aaoooui"]);
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{

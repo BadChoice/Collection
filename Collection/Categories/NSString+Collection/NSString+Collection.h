@@ -65,6 +65,8 @@
  */
 - (NSString *)lcFirst;
 
+- (NSString*)withoutDiacritic;
+
 - (NSString*) urlEncode;
 - (NSString*) urlDecode;
 - (NSString*) md5;
