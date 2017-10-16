@@ -44,8 +44,8 @@
 }
 
 -(NSArray*)filter_:(SEL)selector withObject:(id)object{
-    return [self filter:^BOOL(id object) {
-        return (BOOL)[object performSelector:selector withObject:object];
+    return [self filter:^BOOL(id obj) {
+        return (BOOL)[obj performSelector:selector withObject:object];
     }];
 }
 
@@ -56,8 +56,8 @@
 }
 
 -(NSArray*)reject_:(SEL)selector withObject:(id)object{
-    return [self reject:^BOOL(id object) {
-        return (BOOL)[object performSelector:selector withObject:object];
+    return [self reject:^BOOL(id obj) {
+        return (BOOL)[obj performSelector:selector withObject:object];
     }];
 }
 
