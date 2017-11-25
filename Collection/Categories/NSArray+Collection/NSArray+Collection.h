@@ -241,14 +241,24 @@
 -(id)maxObject:(NSString*)keypath;
 
 /**
+ * Returns the minimum block(element) in the array
+ */
+-(id)maxObjectFor:(double(^)(id obj))block;
+
+/**
  * Returns the greatests element in the array
  */
 -(id)minObject;
 
 /**
- * Returns the greatests element.keypath in the array
+ * Returns the minimum element.keypath in the array
  */
 -(id)minObject:(NSString*)keypath;
+
+/**
+ * Returns the minimum block(element) in the array
+ */
+-(id)minObjectFor:(double(^)(id obj))block;
 
 /**
  * Returns a random object from within the array

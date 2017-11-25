@@ -306,7 +306,13 @@
 
 -(id)maxObject:(NSString *)keypath{
     return [self reduce:^id(id carry, id object) {
-        return ([object valueForKeyPath:keypath] > [carry valueForKeyPath:keypath] ) ? object : carry;
+        return ([[object valueForKeyPath:keypath] doubleValue] > [[carry valueForKeyPath:keypath] doubleValue]) ? object : carry;
+    } carry:self.firstObject];
+}
+
+-(id)maxObjectFor:(double(^)(id obj))block{
+    return [self reduce:^id(id carry, id object) {
+        return block(object) > block(carry) ? object : carry;
     } carry:self.firstObject];
 }
 
@@ -316,9 +322,15 @@
     } carry:self.firstObject];
 }
 
+-(id)minObjectFor:(double(^)(id obj))block{
+    return [self reduce:^id(id carry, id object) {
+        return block(object) < block(carry) ? object : carry;
+    } carry:self.firstObject];
+}
+
 -(id)minObject:(NSString *)keypath{
     return [self reduce:^id(id carry, id object) {
-        return ([object valueForKeyPath:keypath] < [carry valueForKeyPath:keypath] ) ? object : carry;
+        return ([[object valueForKeyPath:keypath] doubleValue] < [[carry valueForKeyPath:keypath] doubleValue] ) ? object : carry;
     } carry:self.firstObject];
 }
 
