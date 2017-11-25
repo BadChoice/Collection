@@ -265,6 +265,10 @@
  */
 -(NSArray*)shuffled;
 
+/**
+ * Returns an array of all permutations
+ */
+-(NSArray*)permutations;
 
 /**
  *zip lets you take one collection, and pair every element in that collection with the

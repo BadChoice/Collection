@@ -305,4 +305,18 @@
     XCTAssertFalse([result.firstObject[@"theKey"] boolValue]);
 }
 
+-(void)test_permutations{
+    NSArray* array = @[@1, @2, @3];
+    NSArray* permutations = [array permutations];
+    XCTAssertEqual(6, permutations.count);
+    
+    array = @[@1, @2, @3, @4];
+    permutations = [array permutations];
+    XCTAssertEqual(24, permutations.count);
+    
+    array = @[@1, @2, @3, @4, @5, @6, @7];
+    permutations = [array permutations];
+    XCTAssertEqual(5040, permutations.count);
+}
+
 @end

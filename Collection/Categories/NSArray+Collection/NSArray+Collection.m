@@ -473,8 +473,27 @@
     return product;
 }
 
--(void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay{
+-(NSArray*)permutations{
+    NSMutableArray * permutations = [NSMutableArray new];
     
+    for (NSObject *object in self){
+        [permutations addObject:@[object]];
+    }
+    
+    for (int i = 1; i < self.count ; i++){
+        NSMutableArray *aCopy = permutations.copy;
+        [permutations removeAllObjects];
+        
+        for (NSObject *object in self){
+            for (NSArray *oldArray in aCopy){
+                if ([oldArray containsObject:object] == NO){
+                    NSMutableArray *newArray = [NSMutableArray arrayWithArray:oldArray];
+                    [newArray addObject:object];
+                    [permutations addObject:newArray];
+                }
+            }
+        }        
+    }
+    return permutations;
 }
-
 @end
