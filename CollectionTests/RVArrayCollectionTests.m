@@ -66,10 +66,10 @@
 }
 
 -(void)testSplice{
-    NSArray* array2             = @[@1,@2,@3,@4,@5].mutableCopy;
+    NSArray* array2             = @[@1, @2, @3, @4, @5].mutableCopy;
     NSArray* chunk              = [array2 splice:2];
-    NSArray* cunkExpectation    = @[@3,@4,@5];
-    NSArray* arrayExpectation   = @[@1,@2];
+    NSArray* cunkExpectation    = @[@1, @2];
+    NSArray* arrayExpectation   = @[@3, @4, @5];
     XCTAssertTrue([chunk isEqual:cunkExpectation]);
     XCTAssertTrue([array2 isEqual:arrayExpectation]);
 }
@@ -77,8 +77,8 @@
 -(void)testSpliceBigger{
     NSArray* array2             = @[@1,@2,@3,@4,@5].mutableCopy;
     NSArray* chunk              = [array2 splice:10];
-    NSArray* cunkExpectation    = @[];
-    NSArray* arrayExpectation   = @[@1,@2,@3,@4,@5];
+    NSArray* cunkExpectation    = @[@1,@2,@3,@4,@5];
+    NSArray* arrayExpectation   = @[];
     XCTAssertTrue([chunk isEqual:cunkExpectation]);
     XCTAssertTrue([array2 isEqual:arrayExpectation]);
 }

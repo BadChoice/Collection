@@ -162,16 +162,12 @@
 }
 
 -(NSArray*)splice:(int)howMany{
-    if([self isKindOfClass:[NSMutableArray class]]){
-        if(howMany > self.count) return @[];
-        NSArray* chunk = [self slice:howMany];
-        [(NSMutableArray*)self removeObjectsInRange:NSMakeRange(howMany, self.count - howMany)];
-        return chunk;
-    }
-    else{
+    if (![self isKindOfClass:NSMutableArray.class]){
         [NSException raise:@"Array is not mutable" format:@"Array needs to be mutable"];
-        return nil;
     }
+    NSArray* chunk = [self take:howMany];
+    [(NSMutableArray*)self removeObjectsInRange:NSMakeRange(0, MIN(howMany, self.count))];
+    return chunk;
 }
 
 - (NSArray *)map:(id (^)(id obj, NSUInteger idx))block {
