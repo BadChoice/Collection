@@ -221,7 +221,8 @@
 - (NSArray*)pluck:(NSString*)keyPath{
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
     [self each:^(id object) {
-        [result addObject:[object valueForKeyPath:keyPath]];
+        NSObject* value = [object valueForKeyPath:keyPath];
+        if(value) [result addObject:[object valueForKeyPath:keyPath]];
     }];
     return result;
 }
