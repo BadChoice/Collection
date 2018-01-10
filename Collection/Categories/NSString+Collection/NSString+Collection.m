@@ -83,6 +83,10 @@
     return [self stringByReplacingOccurrencesOfString:character withString:replace];
 }
 
+- (NSString*)replaceRegexp:(NSString*)regexp with:(NSString*)replace{
+    return [self stringByReplacingOccurrencesOfString:self withString:replace options:NSRegularExpressionSearch range:NSMakeRange(0, self.length)];
+}
+
 - (NSArray*) split{
     return [self split:1];
 }

@@ -22,6 +22,7 @@
 - (NSString*) substr:(int)from length:(int)length;
 
 - (NSString*)replace:(NSString*)character with:(NSString*)replace;
+- (NSString*)replaceRegexp:(NSString*)regexp with:(NSString*)replace;
 
 - (NSArray*) split;
 - (NSArray*) split:(int)splitLength;
