@@ -103,8 +103,11 @@
     NSMutableArray* predicates = [NSMutableArray new];
     
     [keyPaths each:^(NSString* keypath) {
-        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"%K contains[c] %@",keypath,value];
-        [predicates addObject:predicate];
+        NSArray *terms = [value componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        [terms each:^(NSString* term) {
+            NSPredicate* predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@",keypath,term];
+            [predicates addObject:predicate];
+        }];
     }];
     
     NSPredicate *resultPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:predicates];
