@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "NSArray+Collection.h"
+#import "TestObject.h"
 
 @interface RVArrayCollectionTests : XCTestCase
 
@@ -317,6 +318,22 @@
     array = @[@1, @2, @3, @4, @5, @6, @7];
     permutations = [array permutations];
     XCTAssertEqual(5040, permutations.count);
+}
+
+-(void)test_can_sort_with_nil_in_the_end{
+    
+    TestObject *a = [TestObject make:@"batman"    age:@(45)];
+    TestObject *b = [TestObject make:@"spiderman" age:@(16)];
+    TestObject *c = [TestObject make:@"jocker"    age:nil];
+    TestObject *d = [TestObject make:@"ironman"   age:@(42)];
+    
+    NSArray* result = [@[a,b,c,d] sortWithNilAtTheEnd:@"age" ascending:YES];
+    
+    XCTAssertEqual(result[0], b);
+    XCTAssertEqual(result[1], d);
+    XCTAssertEqual(result[2], a);
+    XCTAssertEqual(result[3], c);
+    
 }
 
 @end

@@ -145,6 +145,16 @@
     }];
 }
 
+- (NSArray*)sortWithNilAtTheEnd:(NSString *)key ascending:(BOOL)ascending{
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:key
+                                                                     ascending:!ascending
+                                                                    comparator:^NSComparisonResult(id obj1, id obj2)  {
+                                                                        return [obj2 compare:obj1];
+                                                                    }];
+    
+    return [self sortedArrayUsingDescriptors:@[sortDescriptor]];
+}
+
 - (NSArray*)reverse{
     return [[self reverseObjectEnumerator] allObjects];
 }

@@ -112,7 +112,11 @@
  */
 - (NSArray*)sortWith:(NSComparisonResult (^)(id a, id b))callback;
 
-
+/**
+ * @return NSArray sorted by key value, but leaving the nil values at the end
+ */
+- (NSArray*)sortWithNilAtTheEnd:(NSString *)key ascending:(BOOL)ascending;
+    
 /**
  * @return NSArray reverted
  */
