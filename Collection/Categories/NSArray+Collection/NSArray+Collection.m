@@ -100,17 +100,19 @@
 }
 
 - (NSArray*)whereAny:(NSArray*)keyPaths like:(id)value{
-    NSMutableArray* predicates = [NSMutableArray new];
+    NSMutableArray* orPredicates = [NSMutableArray new];
     
     [keyPaths each:^(NSString* keypath) {
+        NSMutableArray* andPredicates = [NSMutableArray new];
         NSArray *terms = [value componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         [terms each:^(NSString* term) {
             NSPredicate* predicate = [NSPredicate predicateWithFormat:@"%K contains[cd] %@",keypath,term];
-            [predicates addObject:predicate];
+            [andPredicates addObject:predicate];
         }];
+        [orPredicates addObject:[NSCompoundPredicate andPredicateWithSubpredicates:andPredicates]];
     }];
     
-    NSPredicate *resultPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:predicates];
+    NSPredicate *resultPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:orPredicates];
     return [self filteredArrayUsingPredicate:resultPredicate];
 }
 

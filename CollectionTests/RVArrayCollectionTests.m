@@ -338,13 +338,16 @@
 -(void)test_can_find_where_like{
     NSArray* array = @[
                     @{@"key":@"hola que tal"},
+                    @{@"key":@"hola tal"},
                     @{@"key":@"hello baby"},
-                    @{@"key": @"hola"}
+                    @{@"key":@"hola"}
                 ];
     
     NSArray* result = [array where:@"key" like:@"hola tal"];
     
     XCTAssertEqual( 2, result.count );
+    XCTAssertEqual( @"hola que tal", result[0][@"key"] );
+    XCTAssertEqual( @"hola tal", result[1][@"key"] );
     
 }
 
