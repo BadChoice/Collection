@@ -138,6 +138,11 @@
 - (NSArray*)splice  :(int)howMany;
 
 /**
+ * @return first object and removes it from current array
+ */
+- (NSArray *)pop;
+
+/**
  * @return new NSArray from the result of the block performed to each element
  */
 - (NSArray*)map:(id (^)(id obj, NSUInteger idx))block;

@@ -185,6 +185,10 @@
     return chunk;
 }
 
+-(NSArray *) pop {
+    return [self splice:1].firstObject;
+}
+
 - (NSArray *)map:(id (^)(id obj, NSUInteger idx))block {
     NSMutableArray* result = [NSMutableArray arrayWithCapacity:self.count];
     [self enumerateObjectsUsingBlock:^(id currentObject, NSUInteger index, BOOL *stop) {
