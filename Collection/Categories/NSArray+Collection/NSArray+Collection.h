@@ -329,6 +329,8 @@
 - (NSArray*)distinct;
 - (NSArray*)distinct:(NSString*)keypath;
 
++ (NSArray *)range:(int)to;
+
 /**
  * @param from the starting number
  * @param to the final number

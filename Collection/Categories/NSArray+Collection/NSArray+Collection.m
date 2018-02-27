@@ -476,6 +476,10 @@
     return [self valueForKeyPath:finalKeypath];
 }
 
++ (NSArray*)range:(int)to{
+    return [self range:0 to:to step:1];
+}
+
 + (NSArray*)range:(int)from to:(int)to{
     return [self range:from to:to step:1];
 }
