@@ -476,6 +476,18 @@
     return [self valueForKeyPath:finalKeypath];
 }
 
++ (NSArray*)range:(int)from to:(int)to{
+    return [self range:from to:to step:1];
+}
+
++ (NSArray*)range:(int)from to:(int)to step:(int)step{
+    NSMutableArray * result = NSMutableArray.new;
+    for (int i = from; i <= to;  i = i + step){
+        [result addObject:@(i)];
+    }
+    return result;
+}
+
 -(NSArray*)crossJoin:(NSArray*)list{
     if([list.firstObject isKindOfClass:NSArray.class]){
         return [self.class cartesianProduct:[@[self] join:list]];

@@ -348,7 +348,18 @@
     XCTAssertEqual( 2, result.count );
     XCTAssertEqual( @"hola que tal", result[0][@"key"] );
     XCTAssertEqual( @"hola tal", result[1][@"key"] );
-    
+}
+
+-(void)test_range{
+    NSArray* result = [NSArray range:0 to:4];
+    NSArray* expectation = @[@0, @1, @2, @3, @4];
+    XCTAssertEqualObjects(expectation, result);
+}
+
+-(void)test_range_step{
+    NSArray* result = [NSArray range:0 to:6 step:2];
+    NSArray* expectation = @[@0, @2, @4, @6];
+    XCTAssertEqualObjects(expectation, result);
 }
 
 @end

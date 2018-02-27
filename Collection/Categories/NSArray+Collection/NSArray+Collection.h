@@ -330,6 +330,21 @@
 - (NSArray*)distinct:(NSString*)keypath;
 
 /**
+ * @param from the starting number
+ * @param to the final number
+ * @return an array [@from, ...., @to]
+ */
++ (NSArray *)range:(int)from to:(int)to;
+
+/**
+ * @param from the starting number
+ * @param to the final number
+ * @param step the step for each jump
+ * @return an array [@from, ...., @to]
+ */
++ (NSArray *)range:(int)from to:(int)to step:(int)step;
+
+/**
  * Returns all the combinations with all array items
  */
 - (NSArray*)crossJoin:(NSArray*)list;
