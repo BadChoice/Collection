@@ -193,8 +193,7 @@
     NSMutableArray* result = [NSMutableArray arrayWithCapacity:self.count];
     [self enumerateObjectsUsingBlock:^(id currentObject, NSUInteger index, BOOL *stop) {
         id mappedCurrentObject = block(currentObject, index);
-        if (mappedCurrentObject)
-        {
+        if (mappedCurrentObject) {
             [result addObject:mappedCurrentObject];
         }
     }];

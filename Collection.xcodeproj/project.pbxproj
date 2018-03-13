@@ -25,6 +25,7 @@
 		768DD89A1D1D756700B7E33B /* RVArrayCollectionSetsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 768DD8991D1D756700B7E33B /* RVArrayCollectionSetsTests.m */; };
 		76A8141C1F8D0DA5008B5596 /* NSArray+HighOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A8141B1F8D0DA5008B5596 /* NSArray+HighOrder.m */; };
 		76A814211F8D0DDB008B5596 /* RVArrayHighOrderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A814201F8D0DDB008B5596 /* RVArrayHighOrderTest.m */; };
+		775109C1A2C76E777F44F35D /* NSCountedSet+Collection.m in Sources */ = {isa = PBXBuildFile; fileRef = 77510077C708D5DC016A61B4 /* NSCountedSet+Collection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		76A8141A1F8D0DA5008B5596 /* NSArray+HighOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSArray+HighOrder.h"; path = "NSArray+HighOrder/NSArray+HighOrder.h"; sourceTree = "<group>"; };
 		76A8141B1F8D0DA5008B5596 /* NSArray+HighOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSArray+HighOrder.m"; path = "NSArray+HighOrder/NSArray+HighOrder.m"; sourceTree = "<group>"; };
 		76A814201F8D0DDB008B5596 /* RVArrayHighOrderTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RVArrayHighOrderTest.m; sourceTree = "<group>"; };
+		77510077C708D5DC016A61B4 /* NSCountedSet+Collection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCountedSet+Collection.m"; sourceTree = "<group>"; };
+		775108C3899ED1B888A4871D /* NSCountedSet+Collection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCountedSet+Collection.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,7 @@
 				76274F8C1D5B408800C4014A /* NSDictionary+Collection */,
 				76255B361D11B81900E6ADEB /* NSArray+Collection */,
 				76A814191F8D0D80008B5596 /* NSArray+HighOrder */,
+				77510586781CD75309D69B7F /* NSCountedSet+Collection */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -204,6 +208,15 @@
 				76A8141B1F8D0DA5008B5596 /* NSArray+HighOrder.m */,
 			);
 			name = "NSArray+HighOrder";
+			sourceTree = "<group>";
+		};
+		77510586781CD75309D69B7F /* NSCountedSet+Collection */ = {
+			isa = PBXGroup;
+			children = (
+				77510077C708D5DC016A61B4 /* NSCountedSet+Collection.m */,
+				775108C3899ED1B888A4871D /* NSCountedSet+Collection.h */,
+			);
+			path = "NSCountedSet+Collection";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +329,7 @@
 				76274F931D5B40E000C4014A /* NSDictionary+Collection.m in Sources */,
 				76A8141C1F8D0DA5008B5596 /* NSArray+HighOrder.m in Sources */,
 				76255B121D11B7D900E6ADEB /* main.m in Sources */,
+				775109C1A2C76E777F44F35D /* NSCountedSet+Collection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
