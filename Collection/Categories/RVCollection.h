@@ -1,17 +1,10 @@
-//
-//  RVCollection.h
-//  RVCollection
-//
-//  Created by Badchoice on 10/8/16.
-//  Copyright © 2016 Revo. All rights reserved.
-//
-
 #ifndef RVCollection_h
 #define RVCollection_h
 
 #import "NSArray+HighOrder.h"
 #import "NSDictionary+Collection.h"
 #import "NSString+Collection.h"
+#import "NSCountedSet+Collection.h"
 
 //#define isEqual(x,y)        ((x && [x isEqual:y]) || (!x && !y))
 #define isEqual(x,y)        ((!isNull(x) && [x isEqual:y]) || (isNull(x) && isNull(y))) //To avoid new warnings
