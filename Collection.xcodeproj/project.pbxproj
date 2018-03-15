@@ -268,11 +268,11 @@
 				TargetAttributes = {
 					76255B0C1D11B7D900E6ADEB = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = ZR9PT9PJYX;
+						DevelopmentTeam = F2VSE3YKKD;
 					};
 					76255B251D11B7D900E6ADEB = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = ZR9PT9PJYX;
+						DevelopmentTeam = F2VSE3YKKD;
 						TestTargetID = 76255B0C1D11B7D900E6ADEB;
 					};
 				};
@@ -481,7 +481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZR9PT9PJYX;
+				DEVELOPMENT_TEAM = F2VSE3YKKD;
 				INFOPLIST_FILE = Collection/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = works.revo.Collection;
@@ -493,7 +493,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZR9PT9PJYX;
+				DEVELOPMENT_TEAM = F2VSE3YKKD;
 				INFOPLIST_FILE = Collection/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = works.revo.Collection;
@@ -505,7 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = ZR9PT9PJYX;
+				DEVELOPMENT_TEAM = F2VSE3YKKD;
 				INFOPLIST_FILE = CollectionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = works.revo.CollectionTests;
@@ -518,7 +518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = ZR9PT9PJYX;
+				DEVELOPMENT_TEAM = F2VSE3YKKD;
 				INFOPLIST_FILE = CollectionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = works.revo.CollectionTests;

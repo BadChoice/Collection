@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "NSString+Collection.h"
+#import "RVCollection.h"
 
 @interface RVStringCollectionTests : XCTestCase
 
@@ -247,6 +248,15 @@
     NSString* string = @"hello àáòòöüí";
     NSString* result = string.withoutDiacritic;
     XCTAssertTrue([result isEqualToString:@"hello aaoooui"]);
+}
+
+
+-(void)test_tap{
+    NSString* result = tap(@{@"hello" : @"world"}.mutableCopy, ^(NSMutableDictionary* dict){
+        dict[@"hello"] = @"sexy";
+    });
+
+    XCTAssertTrue([result isEqual:@{@"hello" : @"sexy"}]);
 }
 
 - (void)testPerformanceExample {

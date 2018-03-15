@@ -14,6 +14,12 @@
 #define isEmptyString(A)    [NSString isEmptyString:A]
 #define str(A,...)          [NSString stringWithFormat:A,##__VA_ARGS__]
 
+typedef void(^tapBlock)(id object);
+id tap(id theObject, tapBlock theBlock){
+    theBlock(theObject);
+    return theObject;
+}
+
 #ifdef DEBUG
 #define DLog(format, ...) NSLog(format, ##__VA_ARGS__)
 #else
