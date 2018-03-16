@@ -271,20 +271,26 @@ In the .h there is the explanation of what it really does
 Just some examples, check the .h or the tests to see them all
     
 ```
-    NSDictionary* filtered = [@{@"pass":@0,@"dontPass":@1} filter:^BOOL(id key, id object) {
-        return [object floatValue] == 0;
+    NSDictionary* filtered = [@{@"pass":@0, @"dontPass":@1} filter:^BOOL(id key, id object) {
+        return object.floatValue == 0;
     }];
 ```
 
 ```
-    NSDictionary* result = [@{@"toBeMapped":@"value",@"toBeMapped2":@"value2"} map:^id(id key, id object) {
-    return [key stringByAppendingString:object];
+    NSDictionary* result = [@{@"toBeMapped":@"value", @"toBeMapped2":@"value2"} map:^id(id key, id object) {
+        return [key append:object];
     }];
 ```
 
 ## String Examples
 
 Just some examples, check the .h or the tests to see them all
+
+```
+// [NSString stringWithFormat:@"a formated %@ string", value]; 
+// becomes
+str(@"a formated %@ string", value);
+```
 
 ```
     NSArray* result         = [@"hola;que;tal" explode:@";"];
