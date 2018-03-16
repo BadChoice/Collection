@@ -539,4 +539,10 @@
     }
     return permutations;
 }
+
+id tap(id theObject, tapBlock theBlock){
+    theBlock(theObject);
+    return theObject;
+}
+
 @end

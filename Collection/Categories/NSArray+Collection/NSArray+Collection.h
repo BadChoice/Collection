@@ -363,5 +363,7 @@
 - (NSNumber*)min;
 - (NSNumber*)min:(NSString*)keypath;
 
+typedef void(^tapBlock)(id object);
+id tap(id theObject, tapBlock theBlock);
 
 @end

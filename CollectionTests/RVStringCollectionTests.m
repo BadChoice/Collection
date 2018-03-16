@@ -250,7 +250,6 @@
     XCTAssertTrue([result isEqualToString:@"hello aaoooui"]);
 }
 
-
 -(void)test_tap{
     NSString* result = tap(@{@"hello" : @"world"}.mutableCopy, ^(NSMutableDictionary* dict){
         dict[@"hello"] = @"sexy";
