@@ -241,7 +241,7 @@ In the .h there is the explanation of what it really does
 
 ```
     NSArray* names = @["Spiderman", @"Batman", @"Robin", @"Luxor"];
-    BOOL containsSpiderman = [self.heroes contains:^BOOL(Hero* hero) {
+    BOOL containsSpiderman = [self.names contains:^BOOL(Hero* hero) {
         return [hero.name isEqualToString:@"Spiderman"];
     }];
     
@@ -252,13 +252,13 @@ In the .h there is the explanation of what it really does
 
 
 ```
-    [self printArray:[@[@1,@2,@3,@4,@5,@6] slice:3]];
-    [self printArray:[@[@1,@2,@3,@4,@5,@6] slice:10]];
-    [self printArray:[@[@1,@2,@3,@4,@5,@6] slice:6]];
-    [self printArray:[@[@1,@2,@3,@4,@5,@6] take:2]];
-    [self printArray:[@[@1,@2,@3,@4,@5,@6] take:10]];
-    [self printArray:[@[@1,@2,@3,@4,@5,@6] take:-2]];
-    [self printArray:[@[@1,@2,@3,@4,@5,@6] take:-10]];
+    [@[@1,@2,@3,@4,@5,@6] slice:3];
+    [@[@1,@2,@3,@4,@5,@6] slice:10];
+    [@[@1,@2,@3,@4,@5,@6] slice:6];
+    [@[@1,@2,@3,@4,@5,@6] take:2];
+    [@[@1,@2,@3,@4,@5,@6] take:10];
+    [@[@1,@2,@3,@4,@5,@6] take:-2];
+    [@[@1,@2,@3,@4,@5,@6] take:-10];
 ```
 
 ```
