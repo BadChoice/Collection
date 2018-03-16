@@ -240,9 +240,14 @@ In the .h there is the explanation of what it really does
 ```
 
 ```
+    NSArray* names = @["Spiderman", @"Batman", @"Robin", @"Luxor"];
     BOOL containsSpiderman = [self.heroes contains:^BOOL(Hero* hero) {
         return [hero.name isEqualToString:@"Spiderman"];
     }];
+    
+    BOOL heroes = [self.names where:@"name" like:@"man"];
+    //HEroes => [@"Spidrman, @"Batman"]
+    
 ```
 
 
