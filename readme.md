@@ -230,12 +230,10 @@ In the .h there is the explanation of what it really does
 ```
 
 ```
-    NSArray* grouped = [self.heroes join:self.heroes];
+    [self.heroes groupBy:@"age"];
 
-    [grouped groupBy:@"name"];
-
-    [grouped groupBy:@"name" block:^NSString *(Hero* object, NSString *key) {
-    return str(@"-- %@",object.name);
+    [self.heroes groupBy:@"age" block:^NSString *(Hero* object, NSString *key) {
+        return str(@"age %@", object.age);
     }];
 ```
 
