@@ -362,4 +362,13 @@
     XCTAssertEqualObjects(expectation, result);
 }
 
+-(void)test_count_keypath{
+    NSArray * sample = @[
+      @ {@"toCount" : @[@1, @2]},
+      @ {@"toCount" : @[@3, @4]},
+      @ {@"toCount" : @[@5, @6, @7]},
+    ];
+    XCTAssertEqual(7, [sample countKeyPath:@"toCount"]);
+}
+
 @end

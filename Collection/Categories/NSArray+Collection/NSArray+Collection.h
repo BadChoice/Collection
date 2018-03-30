@@ -362,6 +362,7 @@
 - (NSNumber*)max:(NSString*)keypath;
 - (NSNumber*)min;
 - (NSNumber*)min:(NSString*)keypath;
+- (NSUInteger)countKeyPath:(NSString*)keypath;
 
 typedef void(^tapBlock)(id object);
 id tap(id theObject, tapBlock theBlock);

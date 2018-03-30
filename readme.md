@@ -99,6 +99,7 @@ Copy the category files to your project or just
 `max:keyPath`
 `min`
 `min:keyPath`
+`countKeyPath:`
 
 `map_:selector`
 `map_:selector:withObject`

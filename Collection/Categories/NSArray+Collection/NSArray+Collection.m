@@ -427,6 +427,10 @@
 - (NSNumber*)min                    { return [self operator:@"min" keypath:nil];    }
 - (NSNumber*)min:(NSString*)keypath { return [self operator:@"min" keypath:keypath];}
 
+- (NSUInteger)countKeyPath:(NSString*)keypath{
+    return [self flatten:keypath].count;
+}
+
 - (NSNumber*)sumWith:(NSNumber*(^)(id object))block{
     return [self reduce:^id(NSNumber* carry, id object) {
         return @(carry.floatValue + block(object).floatValue);
