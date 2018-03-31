@@ -35,6 +35,10 @@ Copy the category files to your project or just
 `where:keyPath:is` 
 `whereAny:keyPaths:like` 
 `whereAny:keyPaths:is` 
+`whereNull` 
+`whereNull:keyPath` 
+`whereNotNull`
+`whereNotNull:keyPath` 
 
 `sort`
 `sort:key`
