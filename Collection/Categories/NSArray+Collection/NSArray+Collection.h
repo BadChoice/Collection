@@ -80,6 +80,11 @@
  */
 - (NSArray*)whereAny:(NSArray*)keyPaths like:(id)value;
 
+- (NSArray*)whereNull;
+- (NSArray*)whereNull:(NSString*)keyPath;
+- (NSArray*)whereNotNull;
+- (NSArray*)whereNotNull:(NSString*)keyPath;
+
 
 /**
  * performs the operation to each element

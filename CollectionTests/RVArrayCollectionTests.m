@@ -362,7 +362,7 @@
     XCTAssertEqualObjects(expectation, result);
 }
 
--(void)test_count_keypath{
+-(void)test_count_keyPath{
     NSArray * sample = @[
       @ {@"toCount" : @[@1, @2]},
       @ {@"toCount" : @[@3, @4]},
@@ -371,4 +371,53 @@
     XCTAssertEqual(7, [sample countKeyPath:@"toCount"]);
 }
 
+-(void)test_where_null{
+    NSArray * sample = @[
+            [NSNull null],
+            [NSNull null],
+            @1,
+            @2,
+            @3
+    ];
+
+    XCTAssertEqual(2, [sample whereNull].count);
+    XCTAssertEqualObjects(NSNull.null, [sample whereNull].firstObject);
+}
+
+-(void)test_where_null_keyPath {
+    NSArray *sample = @[
+            @{@"hello": [NSNull null]},
+            @{@"hello": [NSNull null]},
+            @{@"hello": @1},
+            @{@"hello": @2},
+            @{@"hello": @3},
+    ];
+    XCTAssertEqual(2, [sample whereNull:@"hello"].count);
+    XCTAssertEqualObjects(NSNull.null, [sample whereNull:@"hello"].firstObject[@"hello"]);
+}
+
+-(void)test_where_not_null{
+    NSArray * sample = @[
+            [NSNull null],
+            [NSNull null],
+            @1,
+            @2,
+            @3
+    ];
+
+    XCTAssertEqual(3, [sample whereNotNull].count);
+    XCTAssertEqualObjects(@1, [sample whereNotNull].firstObject);
+}
+
+-(void)test_where_not_null_keyPath {
+    NSArray *sample = @[
+            @{@"hello": [NSNull null]},
+            @{@"hello": [NSNull null]},
+            @{@"hello": @1},
+            @{@"hello": @2},
+            @{@"hello": @3},
+    ];
+    XCTAssertEqual(3, [sample whereNotNull:@"hello"].count);
+    XCTAssertEqualObjects(@1, [sample whereNotNull:@"hello"].firstObject[@"hello"]);
+}
 @end
