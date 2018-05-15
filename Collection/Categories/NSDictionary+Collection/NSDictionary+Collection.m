@@ -50,6 +50,14 @@
     return result;
 }
 
+- (NSDictionary*)merge:(NSDictionary*)toMerge{
+    NSMutableDictionary* temp = self.mutableCopy;
+    [toMerge each:^(id key, id object) {
+        temp[key] = object;
+    }];
+    return temp;
+}
+
 //===================================
 #pragma mark - Collection
 //===================================

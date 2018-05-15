@@ -15,6 +15,7 @@
 - (NSString*)toString;
 - (NSDictionary*)except:(NSArray*)exceptKeys;
 - (NSDictionary*)only:(NSArray*)keysToKeep;
+- (NSDictionary*)merge:(NSDictionary*)toMerge;
 
 - (void)each:(void(^)(id key, id object))operation;
 - (NSDictionary*)filter:(BOOL (^)(id key, id object))condition;

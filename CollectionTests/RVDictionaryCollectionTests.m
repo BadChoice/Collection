@@ -81,6 +81,16 @@
     XCTAssertEqual(result[@"key1"], @"hello");
 }
 
+-(void)test_merge{
+    
+    NSDictionary * dict = [@{@"a" : @1, @"b": @2} merge:@{@"b":@3, @"c":@4}];
+    NSDictionary * expect = @{@"a" : @1, @"b":@3, @"c":@4};
+    
+    XCTAssertEqual(3, dict.count);
+    XCTAssertEqualObjects(expect, dict);
+}
+
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
