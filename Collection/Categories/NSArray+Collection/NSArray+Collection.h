@@ -316,7 +316,7 @@
 
 /**
  * Adds or removes the object depending if it is in the array
- * @param object
+ * @param object the object to toggle
  */
 -(void)toggleObject:(id)object;
 
