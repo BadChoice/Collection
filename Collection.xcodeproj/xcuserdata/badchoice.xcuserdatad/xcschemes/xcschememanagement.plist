@@ -9,33 +9,45 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>-[RVArrayCollectionTests test_range].xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false />
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>-[RVArrayCollectionTests test_range_step].xcscheme</key>
+		<key>-[RVStringCollectionTests test_tap].xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>-[RVStringCollectionTests test_tap].xcscheme</key>
+		<key>-[RVArrayCollectionTests test_count_keypath].xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>-[RVArrayCollectionTests test_count_keypath].xcscheme</key>
+		<key>-[RVArrayCollectionTests test_where_null].xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>4</integer>
+		</dict>
+		<key>-[RVArrayCollectionTests test_where_null_keyPath].xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>-[RVArrayCollectionTests].xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>-[RVArrayCollectionTests test_it_can_toggle_an_object].xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

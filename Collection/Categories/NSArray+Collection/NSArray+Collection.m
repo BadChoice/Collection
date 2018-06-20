@@ -116,6 +116,30 @@
     return [self filteredArrayUsingPredicate:resultPredicate];
 }
 
+- (NSArray*)whereNull{
+    return [self filter:^BOOL(id object) {
+        return [object isEqual:NSNull.null];
+    }];
+}
+
+- (NSArray*)whereNull:(NSString*)keyPath{
+    return [self filter:^BOOL(id object) {
+        id value = [object valueForKeyPath:keyPath];
+        return value == nil || [[object valueForKeyPath:keyPath] isEqual:NSNull.null];
+    }];
+}
+- (NSArray*)whereNotNull{
+    return [self filter:^BOOL(id object) {
+        return ![object isEqual:NSNull.null];
+    }];
+}
+
+- (NSArray*)whereNotNull:(NSString*)keyPath{
+    return [self filter:^BOOL(id object) {
+        id value = [object valueForKeyPath:keyPath];
+        return value != nil && ![[object valueForKeyPath:keyPath] isEqual:NSNull.null] ;
+    }];
+}
 
 - (void)each:(void(^)(id object))operation{
     [self enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
