@@ -544,6 +544,15 @@
     return permutations;
 }
 
+-(void)toggleObject:(id)object{
+    NSMutableArray* mutableArray = (NSMutableArray*)self;
+    if ([self containsObject:object]) {
+        [mutableArray removeObject:object];
+    } else {
+        [mutableArray addObject:object];
+    }
+}
+
 id tap(id theObject, tapBlock theBlock){
     theBlock(theObject);
     return theObject;

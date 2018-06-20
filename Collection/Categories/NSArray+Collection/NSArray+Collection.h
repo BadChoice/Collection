@@ -310,6 +310,12 @@
 -(NSString*)implode:(NSString*)delimiter;
 
 /**
+ * Adds or removes the object depending if it is in the array
+ * @param object
+ */
+-(void)toggleObject:(id)object;
+
+/**
  * Converts the array into json string
  * of type [1,2,3]
  */

@@ -371,4 +371,15 @@
     XCTAssertEqual(7, [sample countKeyPath:@"toCount"]);
 }
 
+- (void)test_it_can_toggle_an_object{
+    NSMutableArray* sample = @[@"hola" , @"que", @"tal"].mutableCopy;
+
+    [sample toggleObject:@"hola"];
+
+    XCTAssertEqual(2, sample.count);
+
+    [sample toggleObject:@"hola"];
+
+    XCTAssertEqual(3, sample.count);
+}
 @end
