@@ -1,11 +1,3 @@
-//
-//  NSDictionary+Collection.m
-//  Collection
-//
-//  Created by Jordi Puigdellívol on 10/8/16.
-//  Copyright © 2016 Revo. All rights reserved.
-//
-
 #import "NSDictionary+Collection.h"
 #import "NSArray+Collection.h"
 
@@ -50,11 +42,18 @@
     return result;
 }
 
+- (NSDictionary*)merge:(NSDictionary*)toMerge{
+    NSMutableDictionary* temp = self.mutableCopy;
+    [toMerge each:^(id key, id object) {
+        temp[key] = object;
+    }];
+    return temp;
+}
+
 //===================================
 #pragma mark - Collection
 //===================================
 - (void)each:(void(^)(id key, id object))operation{
-    
     [self enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         operation(key, obj);
     }];
@@ -69,7 +68,6 @@
 }
 
 - (NSDictionary*)reject:(BOOL (^)(id key, id object))condition{
-    
     NSSet *keys = [self keysOfEntriesPassingTest:^BOOL(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         return ! condition(key,obj);
     }];
