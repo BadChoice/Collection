@@ -209,7 +209,7 @@
     return chunk;
 }
 
--(NSArray *) pop {
+-(NSString *) pop {
     return [self splice:1].firstObject;
 }
 
