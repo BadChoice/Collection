@@ -91,6 +91,9 @@ Copy the category files to your project or just
 `range:to`
 `range:from:to`
 
+`times:times:value`
+`times:times:callback`
+
 `crossJoin:list`
 `cartesianProduct:arrays`
 

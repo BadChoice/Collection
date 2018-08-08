@@ -432,4 +432,22 @@
     XCTAssertEqual(3, [sample whereNotNull:@"hello"].count);
     XCTAssertEqualObjects(@1, [sample whereNotNull:@"hello"].firstObject[@"hello"]);
 }
+
+-(void)test_times_with_value{
+    NSArray* result = [NSArray times:2 value:@2];
+    NSArray* expectation = @[@(2), @(2)];
+    
+    XCTAssertEqualObjects(expectation, result);
+}
+
+-(void)test_times_with_callback{
+    NSArray* result = [NSArray times_:3 callback:^id(int number) {
+        return @(number);
+    }];
+    
+    NSArray* expectation = @[@(0), @(1), @(2)];
+    
+    XCTAssertEqualObjects(expectation, result);
+}
+
 @end

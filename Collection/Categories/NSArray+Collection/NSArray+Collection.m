@@ -519,6 +519,19 @@
     return result;
 }
 
++ (NSArray *)times:(int)times value:(id)value{
+    return [[self.class range:times-1] map:^id(id obj, NSUInteger idx) {
+        return value;
+    }];
+}
+
++ (NSArray *)times_:(int)times callback:(id (^)(int number))callback{
+    return [[self.class range:times-1] map:^id(NSNumber *number, NSUInteger idx) {
+        return callback(number.intValue);
+    }];
+    
+}
+
 -(NSArray*)crossJoin:(NSArray*)list{
     if([list.firstObject isKindOfClass:NSArray.class]){
         return [self.class cartesianProduct:[@[self] join:list]];
