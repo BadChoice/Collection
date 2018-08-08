@@ -339,6 +339,7 @@
 - (NSArray*)minus:(NSArray*)b;
 - (NSArray*)distinct;
 - (NSArray*)distinct:(NSString*)keypath;
+- (NSArray*)minusExactOcurrences:(NSArray*)b;
 
 + (NSArray *)range:(int)to;
 

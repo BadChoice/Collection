@@ -485,6 +485,16 @@
     return [setA array];
 }
 
+- (NSArray*)minusExactOcurrences:(NSArray*)b{
+    NSMutableArray* result = self.mutableCopy;
+    [b each:^(id object) {
+        NSUInteger index = [result indexOfObject:object];
+        if(index == NSNotFound) return;
+        [result removeObjectAtIndex:index];
+    }];
+    return result;
+}
+
 -(NSArray*)diff:(NSArray*)b{
     return [self minus:b];
 }

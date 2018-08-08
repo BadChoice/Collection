@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "NSArray+Collection.h"
 
 @interface RVArrayCollectionSetsTests : XCTestCase
 
@@ -20,6 +21,20 @@
 
 - (void)tearDown {
     [super tearDown];
+}
+
+-(void)test_minus{
+    NSArray* result      = [@[@1, @2, @3, @4] minus:@[@2, @4, @5]];
+    NSArray* expectation = @[@1, @3];
+    
+    XCTAssertEqualObjects(expectation, result);
+}
+
+-(void)test_minus_without_repeated{
+    NSArray* result = [@[@1, @2, @2, @3, @4] minusExactOcurrences:@[@2, @4, @5]];
+    NSArray* expectation   = @[@1, @2, @3];
+    
+    XCTAssertEqualObjects(expectation, result);
 }
 
 
