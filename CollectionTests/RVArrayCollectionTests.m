@@ -350,6 +350,20 @@
     XCTAssertEqual( @"hola tal", result[1][@"key"] );
 }
 
+-(void)test_can_find_where_is_not{
+    NSArray* array = @[
+                       @{@"key":@"hello"},
+                       @{@"key":@"HELLO"},
+                       @{@"key":@"bye"},
+                       @{@"key":@"BYE"}
+                       ];
+    
+    NSArray* result = [array where:@"key" isNot:@"hello"];
+    
+    XCTAssertEqual(3, result.count );
+    XCTAssertEqual(@"HELLO", result[0][@"key"] );
+}
+
 -(void)test_range{
     NSArray* result = [NSArray range:0 to:4];
     NSArray* expectation = @[@0, @1, @2, @3, @4];
