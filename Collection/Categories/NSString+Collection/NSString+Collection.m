@@ -27,6 +27,10 @@
     return [self componentsSeparatedByString:delimiter];
 }
 
+- (NSArray *)explodeWithSet:(NSCharacterSet *)characterSet {
+    return [self componentsSeparatedByCharactersInSet:characterSet];
+}
+
 - (NSString*)initials{
     NSArray* components = [[self explode:@" "] reject:^BOOL(NSString* text) {
         return text.length == 0;
@@ -66,11 +70,15 @@
 }
 
 -(NSString*)trim{
-    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    return [self trimWithSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
 -(NSString*)trimWithNewLine{
-    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];    
+    return [self trimWithSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
+- (NSString *)trimWithSet:(NSCharacterSet *)characterSet {
+    return [self stringByTrimmingCharactersInSet:characterSet];
 }
 
 -(NSString*)replace:(NSString*)character with:(NSString*)replace{
@@ -79,6 +87,10 @@
 
 - (NSString*)replaceRegexp:(NSString*)regexp with:(NSString*)replace{
     return [self stringByReplacingOccurrencesOfString:self withString:replace options:NSRegularExpressionSearch range:NSMakeRange(0, self.length)];
+}
+
+- (NSString *)replaceCharacterSet:(NSCharacterSet *)characterSet with:(NSString *)replace {
+    return [[self explodeWithSet:characterSet] implode:replace];
 }
 
 - (NSArray*) split{
