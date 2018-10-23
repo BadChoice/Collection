@@ -30,6 +30,12 @@
     XCTAssertTrue([result isEqual:expectation]);
 }
 
+- (void)testExplodeWithCharacterSet {
+    NSArray *result = [@"hola1que2tal" explodeWithSet:[[NSCharacterSet letterCharacterSet] invertedSet]];
+    NSArray *expectation = @[@"hola", @"que", @"tal"];
+    XCTAssertTrue([result isEqual:expectation]);
+}
+
 -(void)testInitials{
     NSString* initials = [@"Jordi Puigdellívol Hernandez" initials];
     XCTAssertTrue([initials isEqualToString:@"JPH"]);
@@ -60,9 +66,19 @@
     XCTAssertTrue( [result isEqualToString:@"trim   "]);
 }
 
+-(void)testTrimCharacterSet{
+    NSString* result = [@"!,HelloGoodbye!" trimWithSet:[NSCharacterSet characterSetWithCharactersInString:@",!"]];
+    XCTAssertTrue( [result isEqualToString:@"HelloGoodbye"]);
+}
+
 -(void)testReplace{
     NSString* result = [@"abcdef" replace:@"f" with:@"a"];
     XCTAssertTrue( [result isEqualToString:@"abcdea"]);
+}
+
+- (void)testReplaceCharacterSet {
+    NSString *result = [@"abcdef" replaceCharacterSet:[NSCharacterSet characterSetWithCharactersInString:@"ce"] with:@"-"];
+    XCTAssertTrue([result isEqualToString:@"ab-d-f"]);
 }
 
 -(void)testCamelCase{
