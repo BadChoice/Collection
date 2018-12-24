@@ -274,6 +274,35 @@
     XCTAssertTrue([result isEqual:@{@"hello" : @"sexy"}]);
 }
 
+-(void)test_can_limit_string{
+    NSString* string = @"The lazy brow fox found";
+    NSString* result = [string limit:8];
+
+    XCTAssertEqualObjects(@"The lazy", result);
+
+    string = @"The lazy brow fox found";
+    result = [string limit:100];
+
+    XCTAssertEqualObjects(@"The lazy brow fox found", result);
+}
+
+-(void)test_can_limit_string_with_ending{
+    NSString* string = @"The lazy brow fox found";
+    NSString* result = [string limit:8 ending:@"..."];
+
+    XCTAssertEqualObjects(@"The l...", result);
+
+    string = @"The lazy brow fox found";
+    result = [string limit:100 ending:@"..."];
+
+    XCTAssertEqualObjects(@"The lazy brow fox found", result);
+    
+    string = @"Hola";
+    result = [string limit:2 ending:@"..."];
+    
+    XCTAssertEqualObjects(@"...", result);
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
