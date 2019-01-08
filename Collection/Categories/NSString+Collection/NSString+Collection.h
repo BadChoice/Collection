@@ -22,6 +22,9 @@
 - (NSString*) substr:(int)from;
 - (NSString*) substr:(int)from length:(int)length;
 
+-(NSString*)limit:(int)length;
+-(NSString*)limit:(int)length ending:(NSString*)ending;
+
 - (NSString*)replace:(NSString*)character with:(NSString*)replace;
 - (NSString*)replaceRegexp:(NSString*)regexp with:(NSString*)replace;
 - (NSString *)replaceCharacterSet:(NSCharacterSet *)characterSet with:(NSString *)replace;

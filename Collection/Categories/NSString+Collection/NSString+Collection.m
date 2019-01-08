@@ -69,6 +69,20 @@
     }
 }
 
+-(NSString*)limit:(int)length{
+    return [self substr:0 length:length];
+}
+
+-(NSString*)limit:(int)length ending:(NSString*)ending{
+    if (self.length > length){
+        if ( (int)(ending.length) >length) {
+            return ending;
+        }
+        return [[self substr:0 length:(int)(length - ending.length)] append:ending];
+    }
+    return self.copy;
+}
+
 -(NSString*)trim{
     return [self trimWithSet:[NSCharacterSet whitespaceCharacterSet]];
 }
