@@ -27,6 +27,7 @@ Copy the category files to your project or just
 `rejectWith:keyPath` 
 `first:blockChecker` 
 `first:blockChecker:default` 
+`first:blockChecker:defaultBlock`
 `last:blockChecker` 
 `last:blockChecker:default` 
 `contains:blockChecker` 
