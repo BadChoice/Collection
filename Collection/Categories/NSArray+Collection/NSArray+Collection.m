@@ -48,6 +48,11 @@
     return (object) ? object : defaultObject;
 }
 
+- (id)first:(BOOL (^)(id object))condition defaultBlock:(id(^)(void))defaultBlock{
+    id object = [self first:condition];
+    return (object) ? object : defaultBlock();
+}
+
 - (id)last:(BOOL (^)(id))condition{
     return [self.reverse first:condition];
 }

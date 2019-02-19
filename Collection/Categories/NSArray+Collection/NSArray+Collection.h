@@ -41,6 +41,11 @@
 - (id)first:(BOOL (^)(id object))condition default:(id)defaultObject;
 
 /**
+ * @return id first object that passes the truth test or `defaultBlock` if any passes
+ */
+- (id)first:(BOOL (^)(id object))condition defaultBlock:(id (^)(void))defaultBlock;
+
+/**
  * @return id last object that passes the truth test or `nil` if any
  */
 - (id)last:(BOOL (^)(id))condition;
