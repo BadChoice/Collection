@@ -81,6 +81,11 @@
 - (NSArray*)whereAny:(NSArray*)keyPaths is:(id)value;
 
 /**
+ * @return NSArray elements where keypaths is in any of the values
+ */
+- (NSArray*)whereIn:(NSString*)keyPath values:(id)values;
+
+/**
  * @return NSArray elements where any of the keypaths is like the value
  */
 - (NSArray*)whereAny:(NSArray*)keyPaths like:(id)value;

@@ -464,4 +464,23 @@
     XCTAssertEqualObjects(expectation, result);
 }
 
+-(void)test_where_in{
+    
+    NSArray * initial = @[
+      @{@"id" : @1, @"name": @"hola"},
+      @{@"id" : @2, @"name": @"adeu"},
+      @{@"id" : @3, @"name": @"patata"},
+    ];
+    
+    NSArray* expectation = @[
+     @{@"id" : @1, @"name": @"hola"},
+     @{@"id" : @3, @"name": @"patata"},
+     ];
+    
+    NSArray* result = [initial whereIn:@"id" values:@[@1, @3]];
+    
+    XCTAssertEqualObjects(expectation, result);
+}
+
+
 @end

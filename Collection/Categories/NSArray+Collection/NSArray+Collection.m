@@ -121,6 +121,12 @@
     return [self filteredArrayUsingPredicate:resultPredicate];
 }
 
+- (NSArray*)whereIn:(NSString*)keyPath values:(id)values{
+    return [self filter:^BOOL(id object) {
+        return [values containsObject:[object valueForKeyPath:keyPath]];
+    }];
+}
+
 - (NSArray*)whereNull{
     return [self filter:^BOOL(id object) {
         return [object isEqual:NSNull.null];
