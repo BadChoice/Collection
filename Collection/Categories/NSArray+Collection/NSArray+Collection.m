@@ -276,10 +276,12 @@
     return results;
 }
 
-- (NSArray*)partition:(BOOL (^)(id obj))block{
-    NSArray* good = [self filter:block];
-    NSArray* bad = [self reject:block];
-    return @[good, bad];
+- (NSArray<NSMutableArray*>*)partition:(BOOL (^)(id obj))block{
+    NSArray<NSMutableArray*>* result = @[NSMutableArray.new, NSMutableArray.new];
+    [self each:^(id object) {
+        block(object) ? [result.firstObject addObject:object] : [result.lastObject addObject:object];
+    }];
+    return result;
 }
 
 - (NSArray*)pluck:(NSString*)keyPath{

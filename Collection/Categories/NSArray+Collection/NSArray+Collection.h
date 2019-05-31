@@ -200,7 +200,7 @@
 /**
  * @return new NSArray of two where the first array contains the elements that return true to the block and the second one the ones that return false
  */
-- (NSArray*)partition:(BOOL (^)(id obj))block;
+- (NSArray<NSMutableArray*>*)partition:(BOOL (^)(id obj))block;
 
 /**
  * @return reduces the array to a single value, passing the result of each iteration into the subsequent iteration
