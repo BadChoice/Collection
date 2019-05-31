@@ -276,6 +276,12 @@
     return results;
 }
 
+- (NSArray*)partition:(BOOL (^)(id obj))block{
+    NSArray* good = [self filter:block];
+    NSArray* bad = [self reject:block];
+    return @[good, bad];
+}
+
 - (NSArray*)pluck:(NSString*)keyPath{
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.count];
     [self each:^(id object) {
