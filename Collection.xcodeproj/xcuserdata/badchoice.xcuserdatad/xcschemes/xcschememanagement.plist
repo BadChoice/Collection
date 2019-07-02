@@ -4,40 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Collection.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
-		<key>-[RVStringCollectionTests test_tap].xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false />
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
 		<key>-[RVArrayCollectionTests test_count_keypath].xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false />
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>-[RVArrayCollectionTests test_where_null].xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false />
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
-		<key>-[RVArrayCollectionTests test_where_null_keyPath].xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false />
-			<key>orderHint</key>
-			<integer>5</integer>
-		</dict>
-		<key>-[RVArrayCollectionTests].xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
@@ -49,19 +16,62 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>-[RVStringCollectionTests test_can_limit_string].xcscheme</key>
+		<key>-[RVArrayCollectionTests test_where_null].xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
+		<key>-[RVArrayCollectionTests test_where_null_keyPath].xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>-[RVArrayCollectionTests].xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>-[RVStringCollectionTests test_can_limit_string].xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>-[RVStringCollectionTests test_can_limit_string_with_ending].xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>-[RVStringCollectionTests test_tap].xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false />
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Collection OSX.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>8</integer>
+		</dict>
+		<key>Collection.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>Collection.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

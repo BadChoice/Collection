@@ -86,6 +86,11 @@
 - (NSArray*)whereAny:(NSArray*)keyPaths is:(id)value;
 
 /**
+ * @return NSArray elements where keypaths is in any of the values
+ */
+- (NSArray*)whereIn:(NSString*)keyPath values:(id)values;
+
+/**
  * @return NSArray elements where any of the keypaths is like the value
  */
 - (NSArray*)whereAny:(NSArray*)keyPaths like:(id)value;
@@ -191,6 +196,11 @@
  * @return NSArray removes one level with key so [{"hola" => [1,2]},{"hola"=>[3,4]}] becomes [1,2,3,4]
  */
 - (NSArray*)flatten:(NSString*)keypath;
+
+/**
+ * @return new NSArray of two where the first array contains the elements that return true to the block and the second one the ones that return false
+ */
+- (NSArray<NSMutableArray*>*)partition:(BOOL (^)(id obj))block;
 
 /**
  * @return reduces the array to a single value, passing the result of each iteration into the subsequent iteration
@@ -381,6 +391,13 @@
  * @param callback the callback the result will be added
  */
 + (NSArray *)times_:(int)times callback:(id (^)(int number))callback;
+
+/**
+ * The chunk method breaks the collection into multiple, smaller collections of a given size:
+ * @param size
+ * @return The chunk method breaks the collection into multiple, smaller arrays of a given size
+ */
+-(NSArray<NSArray*>*)chunk:(int)size;
 
 /**
  * Returns all the combinations with all array items

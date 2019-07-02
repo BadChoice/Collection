@@ -464,4 +464,39 @@
     XCTAssertEqualObjects(expectation, result);
 }
 
+-(void)test_where_in{
+    
+    NSArray * initial = @[
+      @{@"id" : @1, @"name": @"hola"},
+      @{@"id" : @2, @"name": @"adeu"},
+      @{@"id" : @3, @"name": @"patata"},
+    ];
+    
+    NSArray* expectation = @[
+     @{@"id" : @1, @"name": @"hola"},
+     @{@"id" : @3, @"name": @"patata"},
+     ];
+    
+    NSArray* result = [initial whereIn:@"id" values:@[@1, @3]];
+    
+    XCTAssertEqualObjects(expectation, result);
+}
+
+-(void)test_it_can_chunk_an_array{
+    NSArray* result = [@[@1, @2, @3, @4, @5, @6, @7, @8] chunk:3];
+    XCTAssertEqual(3, result.count);
+    NSArray * e1 = @[@1, @2, @3];
+    NSArray * e2 = @[@4, @5, @6];
+    NSArray * e3 = @[@7, @8];
+    XCTAssertEqualObjects(e1,  result[0]);
+    XCTAssertEqualObjects(e2,  result[1]);
+    XCTAssertEqualObjects(e3,  result[2]);
+
+    NSArray* result2 = [@[@1, @2, @3, @4, @5, @6] chunk:3];
+    XCTAssertEqual(2, result2.count);
+    XCTAssertEqualObjects(e1,  result2[0]);
+    XCTAssertEqualObjects(e2,  result2[1]);
+}
+
+
 @end
