@@ -335,6 +335,21 @@
     XCTAssertEqual(result[3], c);
 }
 
+-(void)test_can_sort_by_multiple_keys{
+    
+    TestObject *a = [TestObject make:@"jocker"    age:@(42)];
+    TestObject *b = [TestObject make:@"jocker"    age:@(10)];
+    TestObject *c = [TestObject make:@"batman"    age:@(16)];
+    TestObject *d = [TestObject make:@"batman"    age:@(45)];
+    
+    NSArray* result = [@[a,b,c,d] sortWith:@[@"name", @"age"] ascending:true];
+    
+    XCTAssertEqual(result[0], c);
+    XCTAssertEqual(result[1], d);
+    XCTAssertEqual(result[2], b);
+    XCTAssertEqual(result[3], a);
+}
+
 -(void)test_can_find_where_like{
     NSArray* array = @[
                     @{@"key":@"hola que tal"},
