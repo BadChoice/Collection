@@ -399,7 +399,7 @@
 
 /**
  * The chunk method breaks the collection into multiple, smaller collections of a given size:
- * @param size
+ * @param size the size to chunk
  * @return The chunk method breaks the collection into multiple, smaller arrays of a given size
  */
 -(NSArray<NSArray*>*)chunk:(int)size;
