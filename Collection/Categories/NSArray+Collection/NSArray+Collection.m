@@ -29,6 +29,16 @@
     }];
 }
 
+- (NSArray*)filterWithIndex:(BOOL (^)(id object, int index))condition{
+    NSMutableArray* filteredArray = NSMutableArray.new;
+    [self eachWithIndex:^(id object, int index, BOOL *stop) {
+        if (condition(object, index)) {
+            [filteredArray addObject:object];
+        }
+    }];
+    return filteredArray;
+}
+
 -(NSArray*)rejectWith:(NSString *)keypath{
     return [self reject:^BOOL(id object) {
         return [[object valueForKeyPath:keypath] boolValue];

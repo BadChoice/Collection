@@ -21,6 +21,11 @@
 - (NSArray*)filterWith:(NSString*)keypath;
 
 /**
+ * @return NSArray with only the elements that condition is true
+ */
+- (NSArray*)filterWithIndex:(BOOL (^)(id object, int index))condition;
+
+/**
  * @return NSArray removing the elements that pass the truth test
  */
 - (NSArray*)reject:(BOOL (^)(id object))condition;
