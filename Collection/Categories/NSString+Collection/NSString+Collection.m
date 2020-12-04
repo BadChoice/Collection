@@ -278,6 +278,11 @@
     return [[NSString alloc] initWithData:nsdataFromBase64String encoding:NSUTF8StringEncoding];
 }
 
++(NSString*)fromBase64:(NSString*)base64 withEncoding:(NSStringEncoding)encoding {
+    NSData *nsdataFromBase64String = [[NSData alloc] initWithBase64EncodedString:base64 options:0];
+    return [[NSString alloc] initWithData:nsdataFromBase64String encoding:encoding];
+}
+
 + (NSString *) fromHex:(NSString *)str
 {
     NSMutableData *stringData = [[NSMutableData alloc] init];
