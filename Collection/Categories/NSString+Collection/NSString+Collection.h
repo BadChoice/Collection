@@ -83,7 +83,7 @@
 - (NSString*) md5;
 - (NSString*) toBase64;
 + (NSString*) fromBase64:(NSString*)base64;
-+ (NSString*) fromBase64:(NSString*)base64 withEncoding:(NSStringEncoding)encoding:
++ (NSString*) fromBase64:(NSString*)base64 withEncoding:(NSStringEncoding)encoding;
 + (NSString*) fromHex:(NSString *)str;
 - (NSString*) toHex;
 
