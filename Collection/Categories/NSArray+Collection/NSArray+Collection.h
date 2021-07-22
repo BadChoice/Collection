@@ -10,6 +10,9 @@
 
 @interface NSArray (Collection)
 
++ (NSArray*)fromData:(NSData*)data;
++ (NSArray*)fromString:(NSString*)string;
+
 /**
  * @return NSArray with only the elements that pass the truth test
  */
