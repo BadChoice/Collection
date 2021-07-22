@@ -11,6 +11,19 @@
 
 @implementation NSArray (Collection)
 
++ (NSArray*)fromData:(NSData*)data {
+    if(!data) return nil;
+    NSError* error;
+    NSArray* json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    return json;
+}
+
++ (NSArray*)fromString:(NSString*)string {
+    if( ! string || ! [string isKindOfClass:NSString.class]) return nil;
+    NSData* data = [string dataUsingEncoding:NSUTF8StringEncoding];
+    return (NSArray*)[self.class fromData:data];
+}
+
 - (NSArray*)filter:(BOOL (^)(id object))condition{
     return [self filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id  _Nonnull evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
         return condition(evaluatedObject);
