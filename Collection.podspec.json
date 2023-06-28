@@ -1,15 +1,15 @@
 {
     "name": "Collection",
-    "version": "1.10.25",
+    "version": "1.10.26",
     "summary": "Laravel collection like inspired NSArray category",
     "license": "MIT",
     "platforms": {
         "ios": "13.0",
-        "osx": "10.9"
+        "osx": "10.13"
     },
     "source": {
         "git": "https://github.com/BadChoice/Collection.git",
-        "tag": "1.10.25"
+        "tag": "1.10.26"
     },
     "description": "Laravel collections are really useful and expressive, this is a NSArray category to emulate them",
     "homepage": "https://github.com/BadChoice/Collection.git",
